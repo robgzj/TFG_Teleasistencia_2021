@@ -4,5 +4,6 @@ En la actualidad, el uso de teléfonos móviles con conexión a internet se ha g
 El principal objetivo del proyecto sería el desarrollo de un prototipo de sistema de teleasistencia de bajo coste basado en el uso del teléfono móvil y un conjunto de sensores. Con la realización de este proyecto, el alumno adquirirá experiencia en: desarrollo de aplicaciones en Android; tecnología de comunicaciones inalámbricas (p.ej., Bluetooth); desarrollo de aplicaciones empotradas.
 
 El trabajo será codirigido por Héctor Pérez y Mario Aldea.
+
 ![image](https://user-images.githubusercontent.com/60737807/109425388-4dd35080-79e8-11eb-90bd-ada8e34a3cc0.png)
 
