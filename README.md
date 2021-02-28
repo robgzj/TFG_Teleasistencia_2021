@@ -5,5 +5,7 @@ El principal objetivo del proyecto sería el desarrollo de un prototipo de siste
 
 El trabajo será codirigido por Héctor Pérez y Mario Aldea.
 
+El autor de este trabajo es Roberto González Jiménez
+
 ![image](https://user-images.githubusercontent.com/60737807/109425388-4dd35080-79e8-11eb-90bd-ada8e34a3cc0.png)
 
