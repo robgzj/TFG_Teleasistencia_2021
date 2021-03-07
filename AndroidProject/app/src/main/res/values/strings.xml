@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">TFG_Teleasistencia_2021</string>
+    <string name="app_name">RemoteSoft</string>
+    <string name="logo_description">Logo de la aplicación</string>
+    <string name="datos_sensores">Datos sensores</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="info_app">
+        Aplicación desarollada por Roberto González Jiménez.
+        Su objetivo es el desarrollo de un prototipo de sistema de teleasistencia de bajo
+        coste basado en el uso del teléfono móvil y sensores.
+    </string>
+    <string name="boton_atras">Atrás</string>
 </resources>
