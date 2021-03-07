@@ -1,0 +1,6 @@
+Problemas encontrados:
+
+Semana 2:
+
+-Dificultad a la hora de poner el logo a la app, no se ajustaba correctamente y se veia un fondo negro.
+-No abrían las otras actividades, daba error, la solución fue añadirlas en el AndroidManifest.xml.

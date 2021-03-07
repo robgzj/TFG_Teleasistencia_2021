@@ -1,19 +1,23 @@
 
-S
-java:S1128"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8àÛÔÔ€/
-L
-java:S1659"/Declare "btn_datosSensores" on a separate line.(ëšøÆ8…Ä±Ø€/
-O
-java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8àÛÔÔ€/
-O
-java:S1128	"2Remove this unused import 'android.view.MenuItem'.(Ğ¬Ó‘8ÖÔ€/
+x	java:S116"\Rename this field "btn_datosSensores" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëšøÆ8…Ä±Ø€/
 M
-java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8’İÕ€/
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8’İÕ€/
+`
+java:S1128"CRemove this unused import 'androidx.appcompat.widget.SwitchCompat'.(õÕÂÕ8°À©î€/
 [
-java:S1128"9Remove this unused import 'android.content.IntentFilter'.(ò³ñ£ÿÿÿÿÿ8™…ÛÖ€/
-x	java:S116"\Rename this field "btn_datosSensores" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëšøÆ8…Ä±Ø€/
-P
+java:S1128"9Remove this unused import 'android.content.IntentFilter'.(ò³ñ£ÿÿÿÿÿ8™…ÛÖ€/
+O
 java:S1128
-".Remove this unused import 'android.view.View'.(Ø½­äşÿÿÿÿ8áğü×€/
-s	java:S116"WRename this field "btn_acercaDe" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëšøÆ8Çõá×€/
-Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±
+"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8àÛÔÔ€/
+h
+java:S1192'"FDefine a constant instead of duplicating this literal "value" 3 times.(¯×ë§şÿÿÿÿ8³Òºî€/
+J
+java:S1604)"(Make this anonymous inner class a lambda(»ĞÃ©ûÿÿÿÿ8øí²î€/
+s	java:S116"WRename this field "btn_acercaDe" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëšøÆ8Çõá×€/
+L
+java:S1659"/Declare "btn_datosSensores" on a separate line.(ëšøÆ8…Ä±Ø€/
+S
+java:S1128"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8àÛÔÔ€/
+Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(²Ú±
+O
+java:S1128"2Remove this unused import 'android.view.MenuItem'.(Ğ¬Ó‘8ÖÔ€/

@@ -9,4 +9,7 @@
         coste basado en el uso del teléfono móvil y sensores.
     </string>
     <string name="boton_atras">Atrás</string>
+    <string name="datos_enunciado">DATOS LEÍDOS DEL PULSÓMETRO</string>
+    <string name="tabla_pulsaciones">Pulsaciones</string>
+    <string name="tabla_acelerometro">Acelerómetro</string>
 </resources>

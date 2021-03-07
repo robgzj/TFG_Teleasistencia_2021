@@ -11,6 +11,70 @@
         android:contentDescription="@string/logo_description"
         app:srcCompat="@mipmap/logo_app" />
 
+    <TextView
+        android:id="@+id/datos_leidos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo_app3"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp"
+        android:text="@string/datos_enunciado" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/boton_atras2"
+        android:layout_below="@id/datos_leidos"
+        android:layout_margin="25dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/label_pulsaciones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/tabla_pulsaciones" />
+
+            <TextView
+                android:id="@+id/datos_pulsaciones"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@null" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/label_acelerometro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/tabla_acelerometro" />
+
+            <TextView
+                android:id="@+id/datos_acelerometro"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@null" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3" />
+
+    </TableLayout>
+
     <Button
         android:id="@+id/boton_atras2"
         android:layout_width="300dp"
