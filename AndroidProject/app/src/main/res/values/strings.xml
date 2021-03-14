@@ -7,9 +7,11 @@
         Aplicación desarollada por Roberto González Jiménez.
         Su objetivo es el desarrollo de un prototipo de sistema de teleasistencia de bajo
         coste basado en el uso del teléfono móvil y sensores.
+        Para que funcione la app es necesario tener activada la ubicación y el Bluetooth conectado a la pulsera.
     </string>
     <string name="boton_atras">Atrás</string>
     <string name="datos_enunciado">DATOS LEÍDOS DEL PULSÓMETRO</string>
     <string name="tabla_pulsaciones">Pulsaciones</string>
     <string name="tabla_acelerometro">Acelerómetro</string>
+    <string name="tabla_ubicacion">Ubicación</string>
 </resources>

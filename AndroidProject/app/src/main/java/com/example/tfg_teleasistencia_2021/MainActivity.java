@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity{
         //Guardar estado switch
         switchB=findViewById(R.id.encender_app);
         SharedPreferences sharedPreferences= getSharedPreferences("save",MODE_PRIVATE);
-        switchB.setChecked(sharedPreferences.getBoolean("value", false));
+        switchB.setChecked(sharedPreferences.getBoolean("value", true));
 
         switchB.setOnClickListener(new View.OnClickListener() {
             @Override

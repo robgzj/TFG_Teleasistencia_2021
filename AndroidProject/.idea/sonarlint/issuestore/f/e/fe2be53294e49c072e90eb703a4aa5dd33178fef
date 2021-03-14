@@ -1,3 +1,18 @@
 
-]	java:S110	"<This class has 9 parents which is greater than 5 authorized.(Š—¸úşÿÿÿÿ8¬ ›Ø€/
-p	java:S116"TRename this field "btn_atras" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÈŸæ8ÍšØ€/
+
+java:S1186)"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ĞŠß±8Óİƒ/
+E
+java:S1604."(Make this anonymous inner class a lambda(³ÄËß8©õƒ/
+n
+java:S34571"Q%n should be used in place of \n to produce the platform-specific line separator.(›ˆÒ‹8âğ¿ƒ/
+t
+java:S3252C"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí8âğ¿ƒ/
+t
+java:S3252C"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí8âğ¿ƒ/
+^
+java:S1128
+"<Remove this unused import 'android.hardware.SensorListener'.(ùŸÍ¡úÿÿÿÿ8Óİƒ/
+]	java:S110"<This class has 9 parents which is greater than 5 authorized.(Š—¸úşÿÿÿÿ8¬ ›Ø€/
+s
+java:S3457%"Q%n should be used in place of \n to produce the platform-specific line separator.(Ä±Èøúÿÿÿÿ8äıáƒ/
+p	java:S116"TRename this field "btn_atras" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÈŸæ8ÍšØ€/

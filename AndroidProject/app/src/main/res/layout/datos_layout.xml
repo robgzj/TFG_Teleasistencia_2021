@@ -34,6 +34,26 @@
             android:layout_weight="1">
 
             <TextView
+                android:id="@+id/label_ubicacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/tabla_ubicacion" />
+
+            <TextView
+                android:id="@+id/datos_ubicacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@null" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
                 android:id="@+id/label_pulsaciones"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
