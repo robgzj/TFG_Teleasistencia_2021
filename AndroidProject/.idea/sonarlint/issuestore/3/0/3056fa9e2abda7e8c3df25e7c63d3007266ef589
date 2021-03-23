@@ -1,0 +1,25 @@
+
+X	java:S110"<This class has 9 parents which is greater than 5 authorized.(Á‰Ö÷8·› …/
+r
+java:S1450#"URemove the "miband" field and declare it as a local variable in the relevant methods.( Í„ý8¥±˜Þ…/
+S
+java:S1128"1Remove this unused import 'android.widget.Toast'.(©›ïÍúÿÿÿÿ8“¾½ä…/
+J
+java:S1604W"(Make this anonymous inner class a lambda(¥Ò­´üÿÿÿÿ8ê³Ú…/
+p	java:S116 "TRename this field "btn_atras" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÈŸæ8†Í§ …/
+Z
+java:S1128"=Remove this unused import 'androidx.core.app.ActivityCompat'.(þ¤—²8“¾½ä…/
+O
+java:S1128"-Remove this unused import 'android.Manifest'.(¦øïŽúÿÿÿÿ8“¾½ä…/
+J
+java:S1604F"(Make this anonymous inner class a lambda(Œæëüÿÿÿÿ8”¾½Ú…/
+r	java:S116""VRename this field "switch_scan" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æëó8Ó–±Ù…/
+U
+java:S1128"8Remove this unused import 'androidx.annotation.NonNull'.(ˆÛúÜ8“¾½ä…/
+`
+java:S1128">Remove this unused import 'android.content.pm.PackageManager'.(€®¥õÿÿÿÿÿ8“¾½ä…/
+O
+java:S1128
+"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8“¾½ä…/
+K
+java:S37406"/Provide the parametrized type for this generic.(ž¤èv8ïŸÌ …/

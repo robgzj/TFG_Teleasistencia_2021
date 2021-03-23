@@ -2,6 +2,9 @@ package com.example.tfg_teleasistencia_2021;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.le.ScanCallback;
+import android.bluetooth.le.ScanResult;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Sensor;
@@ -13,6 +16,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,15 +25,28 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.zhaoxiaodan.miband.MiBand;
+
 public class DatosSensores extends AppCompatActivity {
 
-    private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
+
+    private static final String TAG = "==[miband]==";
     Button btn_atras;
     TextView txtUbi;
     TextView txtAcelerometro;
     Sensor acelerometro;
+    private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
     protected LocationManager mLocationManager;
     protected SensorManager mSensorManager;
+
+
+    protected LocationListener mLocationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            txtUbi.setText(String.format("Latitud: %s\nLongitud: %s", location.getLatitude(), location.getLongitude()));
+        }
+    };
+
 
     protected SensorEventListener mSensorListener= new SensorEventListener() {
         @Override
@@ -43,12 +60,6 @@ public class DatosSensores extends AppCompatActivity {
         }
     };
 
-    protected LocationListener mLocationListener = new LocationListener() {
-        @Override
-        public void onLocationChanged(Location location) {
-            txtUbi.setText(String.format("Latitud: %s\nLongitud: %s", location.getLatitude(), location.getLongitude()));
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +80,8 @@ public class DatosSensores extends AppCompatActivity {
         }else{
             getCurrentLocation();
         }
-    }
 
+    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -89,7 +100,7 @@ public class DatosSensores extends AppCompatActivity {
     private void getCurrentLocation() {
         mLocationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
-        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0,
+        mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0,
                 0, mLocationListener);
     }
 
@@ -99,7 +110,6 @@ public class DatosSensores extends AppCompatActivity {
         acelerometro= mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mSensorManager.registerListener(mSensorListener, acelerometro, SensorManager.SENSOR_DELAY_NORMAL);
     }
-
 
     public void openMainActivity(){
         Intent intent =new Intent(this, MainActivity.class);

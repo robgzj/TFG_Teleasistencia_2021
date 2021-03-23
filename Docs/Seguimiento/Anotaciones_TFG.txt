@@ -8,3 +8,21 @@ Semana 2:
 Semana 3:
 
 -Dificultad con la lectura de GPS, no se actualizaba ya que requería de pedir los permisos, que se arreglo añadiendo código
+
+Semana 4:
+
+Para en un futuro poder enviar correctamente la información los lectores de ubicación y acelerometro tambien funcionan en la actividad principal, por lo que el codigo esta en las dos actividades.
+
+El lector de GPS es cambiado de GPS_PROVIDER a NETWORK_PROVIDER, ya que en la version del movil tardaba mucho en iniciarse el GPS y con este va más rapido.
+
+Añadir en build.gradle del modulo, en el apartado 'dependencies' : implementation 'com.zhaoxiaodan.miband:miband-sdk:1.1.2'
+https://github.com/pangliang/miband-sdk-android
+
+No me conecta al dispositivo en la actividad principal, se arreglará las siguientes semanas.
+
+Añadido parcialmente del repositorio en el que me he basado, una actividad que coge el dispositivo seleccionado con una lista de diferentes opciones, como vincular, vibracion, etc.
+
+
+Añadidas 2 actividades con sus corrrespondientes layouts, que se ajustaran más adelante
+
+En la actividad del escaneado de dispositivos para escanear se realizará mediante un switch, cuando esta off limpia la lista de dispositivos

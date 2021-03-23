@@ -1,0 +1,542 @@
+
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862©"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862£"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+m
+java:S3776L"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(¨ώÿÿÿÿ
+
+java:S1862§"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862±"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862±"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862©"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862“"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862…"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+P
+java:S1161A":Add the "@Override" annotation above this method signature(Φΐμ
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+T
+java:S1854ά"=Remove this useless assignment to local variable "menuIndex".(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862£"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862¥"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862¥"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862±"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862…"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+›
+java:S1862x"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862¥"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862¥"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862§"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+>
+java:S1604g"(Make this anonymous inner class a lambda(η”«
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862—"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862§"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862©"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862§"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862΅"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862©"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+Z
+java:S1854Ι">Remove this useless assignment to local variable "byteBuffer".(¬Ηψƒψÿÿÿÿ
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862¥"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862—"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862§"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+›
+java:S1862x"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862΅"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862£"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+D
+java:S1604ª"(Make this anonymous inner class a lambda(±ΰοώÿÿÿÿ
+
+java:S1862©"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862£"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+›
+java:S1862v"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862±"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+f
+java:S1301B"KReplace this "switch" statement by "if" statements to increase readability.(ά°™Πωÿÿÿÿ
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+<	java:S131B""Add a default case to this switch.(ά°™Πωÿÿÿÿ
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+Q
+java:S1874^"6Remove this use of "ProgressDialog"; it is deprecated.(Βθξ™ϊÿÿÿÿ
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862¥"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862±"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862΅"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862±"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862±"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862§"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862©"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+D
+java:S1604²"(Make this anonymous inner class a lambda(ÒΕΊ“ϊÿÿÿÿ
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+?
+java:S1604™"(Make this anonymous inner class a lambda(ΏυΗ¶
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862“"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862£"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862§"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862©"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+G
+java:S1874^",Remove this use of "show"; it is deprecated.(Βθξ™ϊÿÿÿÿ
+Q
+java:S1854Ο"5Remove this useless assignment to local variable "i".(ζΦ«ιόÿÿÿÿ
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+K
+java:S1481Ι"/Remove this unused "byteBuffer" local variable.(¬Ηψƒψÿÿÿÿ
+
+java:S1862¥"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862©"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862±"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862΅"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862±"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862±"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862±"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862΅"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862§"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862±"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862£"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862¥"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862¥"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+C
+java:S1604Z"(Make this anonymous inner class a lambda(δϋλ–όÿÿÿÿ
+
+java:S1862"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862΅"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862©"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+Q	java:S110""<This class has 9 parents which is greater than 5 authorized.( „Α
+
+java:S1862—"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862΅"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ψ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862§"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+Q
+java:S1874^"6Remove this use of "ProgressDialog"; it is deprecated.(Βθξ™ϊÿÿÿÿ
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862£"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ή"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862“"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862©"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862—"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Γ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862£"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862ά"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862“"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Α"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862©"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862§"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862½"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ώ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+n	java:S115="ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ύΦ†
+
+java:S1862»"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862—"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862…"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+?
+java:S1604Ζ"(Make this anonymous inner class a lambda(‰ζ•Μ
+
+java:S1862Ε"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–
+
+java:S1862Ϊ"„This branch can not be reached because the condition duplicates a previous condition in the same sequence of "if/else if" statements(›γμ–

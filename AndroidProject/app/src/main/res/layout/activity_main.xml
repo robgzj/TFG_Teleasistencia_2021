@@ -29,12 +29,22 @@
             android:layout_marginTop="25dp"
             android:text="@string/datos_sensores" />
 
+        <Button
+            android:id="@+id/vincular_pulsera"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/datos_sensores"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="false"
+            android:layout_centerInParent="true"
+            android:text="Vincular pulsera" />
+
         <Switch
             android:id="@+id/encender_app"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_above="@id/acerca_de"
-            android:layout_below="@id/datos_sensores"
+            android:layout_below="@id/vincular_pulsera"
             android:layout_centerHorizontal="true"
             android:checked="false"
             android:scaleX="3"
