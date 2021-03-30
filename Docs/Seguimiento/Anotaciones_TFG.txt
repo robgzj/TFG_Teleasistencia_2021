@@ -25,4 +25,23 @@ Añadido parcialmente del repositorio en el que me he basado, una actividad que 
 
 Añadidas 2 actividades con sus corrrespondientes layouts, que se ajustaran más adelante
 
-En la actividad del escaneado de dispositivos para escanear se realizará mediante un switch, cuando esta off limpia la lista de dispositivos
+En la actividad del escaneado de dispositivos para escanear se realizará mediante un switch, cuando esta off limpia la lista de dispositivos.
+
+Semana 5:
+
+Quitamos la actividad que usamos para probar la conectividad del repositorio de github.
+
+Metemos en todas las actividades menos la de acerca de y la de vinculacion, un metodo de conectar con  la pulsera para que no se pierda la conexion entre actividades, se mostrara en un text view abajo si esta conectada y a que dispositivo.
+
+Añadimos en esas actividades el listener de cambio de pulsaciones, luego nos vamos pasando entre actividades con el intentExtra el dispositivo al que estamos conectado.
+
+IMPORTANTE, para que funcione la lectura de pulsaciones necesitamos pasarle la informacion de la persona, para eso ejecutamos el metodo:
+
+UserInfo userInfo = new UserInfo(20271234, 1, 32, 180, 80, "Usuario", 0);
+                miBand.setUserInfo(userInfo);
+
+Para leer las pulsaciones necesitamos esperar un breve periodo de tiempo para que se pueda actualizar la informacion de la persona en la persona, para ello ejecutamos new Handler().postDelayed(), esto hace que despues de un periodo de tiempo indicado realice la serie de acciones que se indiquen, esperamos un tiempo y asignamos a la pulsera el listener de pulsaciones, ahora cada vez que scanee el listener cambiara el atributo que guarda las pulsaciones, esto se hará para la vista principal y la vista de lectura de datos.
+
+El metodo que llamara a la medida de pulsaciones se llama calcular_pulsaciones(), este metodo tendra dentro otro handler con un postdelayed que ejecutará el metodó de mirar las pulsaciones y dentro de este tambien habra otra llamada al handler que ejecutará otro post delayed del metodo en si tras 15 segundos, esto hará que se ejecute el metodo de mirar pulsaciones cada 15 segundos, este tiempo se ha elegido así ya que aproximadamente el tiempo máximo de medir pulsaciones es de 9 segundos y dejamos un margen de 5 segundos para poder ver los valores, no sobrecargar la pulsera y que no se le puedan acumular dos lecturas a la vez.
+
+

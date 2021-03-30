@@ -1,13 +1,10 @@
 package com.example.tfg_teleasistencia_2021;
 
-import android.Manifest;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.le.ScanCallback;
 import android.bluetooth.le.ScanResult;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -16,11 +13,8 @@ import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import com.zhaoxiaodan.miband.MiBand;
 
@@ -93,7 +87,7 @@ public class VinculacionPulsera extends AppCompatActivity {
                     BluetoothDevice device = devices.get(item);
                     Intent intent = new Intent();
                     intent.putExtra("device", device);
-                    intent.setClass(VinculacionPulsera.this, MActiv2.class);
+                    intent.setClass(VinculacionPulsera.this, MainActivity.class);
                     VinculacionPulsera.this.startActivity(intent);
                     VinculacionPulsera.this.finish();
                 }

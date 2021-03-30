@@ -61,6 +61,14 @@
             android:layout_marginBottom="25dp"
             android:text="@string/acerca_de" />
 
+        <TextView
+            android:id="@+id/conectado_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/acerca_de"
+            android:layout_centerHorizontal="true"
+            android:text="No está vinculado a ninguna pulsera" />
+
     </RelativeLayout>
 
 </LinearLayout>

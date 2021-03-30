@@ -1,6 +1,4 @@
 
-w
-Gapp/src/main/java/com/example/tfg_teleasistencia_2021/MainActivity.java,a\8\a8329b1c745caf06379cf62ae67b21143924afc4
 z
 Japp/src/test/java/com/example/tfg_teleasistencia_2021/ExampleUnitTest.java,f\4\f415e1aca68b55b1778cc64ceb94d9ddd2351561
 ‰
@@ -19,11 +17,11 @@ P
 local.properties,0\7\0712df971a99ac4d2fccb8e0fb19f377f3374cca
 s
 Capp/src/main/java/com/example/tfg_teleasistencia_2021/AcercaDe.java,c\0\c09fc3f8e9e9bce04d6cc7a9b72d8908cff0a752
-x
-Happ/src/main/java/com/example/tfg_teleasistencia_2021/DatosSensores.java,f\e\fe2be53294e49c072e90eb703a4aa5dd33178fef
 }
 Mapp/src/main/java/com/example/tfg_teleasistencia_2021/VinculacionPulsera.java,3\0\3056fa9e2abda7e8c3df25e7c63d3007266ef589
 X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
-r
-Bapp/src/main/java/com/example/tfg_teleasistencia_2021/MActiv2.java,6\f\6fc7dd30dad18c944f9adad552dd4e1c58b04687
+x
+Happ/src/main/java/com/example/tfg_teleasistencia_2021/DatosSensores.java,f\e\fe2be53294e49c072e90eb703a4aa5dd33178fef
+w
+Gapp/src/main/java/com/example/tfg_teleasistencia_2021/MainActivity.java,a\8\a8329b1c745caf06379cf62ae67b21143924afc4

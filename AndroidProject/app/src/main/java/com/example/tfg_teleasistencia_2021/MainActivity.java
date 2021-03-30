@@ -21,6 +21,8 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,8 +33,10 @@ import android.widget.Toast;
 
 import com.zhaoxiaodan.miband.ActionCallback;
 import com.zhaoxiaodan.miband.MiBand;
+import com.zhaoxiaodan.miband.listeners.HeartRateNotifyListener;
 import com.zhaoxiaodan.miband.listeners.NotifyListener;
 import com.zhaoxiaodan.miband.model.LedColor;
+import com.zhaoxiaodan.miband.model.UserInfo;
 import com.zhaoxiaodan.miband.model.VibrationMode;
 
 import java.util.ArrayList;
@@ -44,8 +48,11 @@ public class MainActivity extends AppCompatActivity{
 
     String valoresUbicacion;
     String valoresAcelerometro;
+    String valoresPulsacion;
+    TextView conectado_a;
 
     private MiBand miBand;
+    private BluetoothDevice device;
 
     Sensor acelerometro;
     private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
@@ -72,6 +79,13 @@ public class MainActivity extends AppCompatActivity{
         }
     };
 
+    protected HeartRateNotifyListener mHealthListener= new HeartRateNotifyListener() {
+        @Override
+        public void onNotify(int heartRate) {
+            valoresPulsacion=String.valueOf(heartRate);
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,37 +100,22 @@ public class MainActivity extends AppCompatActivity{
         btn_vinculacion = findViewById(R.id.vincular_pulsera);
         btn_vinculacion.setOnClickListener(v -> openVinculacionctivity());
 
+        Intent intent = this.getIntent();
+        device = intent.getParcelableExtra("device");
+        
+        miBand= new MiBand(this);
+        if(device!= null) {
+            conectar_dispositivo(miBand, device);
 
-        Intent intent=this.getIntent();
+            new Handler().postDelayed(new Runnable() {
+                public void run() {
+                    miBand.setHeartRateScanListener(mHealthListener);
+                    calcular_pulsaciones();
+                }
+            }, 1000);
 
-            final BluetoothDevice device = intent.getParcelableExtra("device");
-            if(device!=null) {
-                miBand = new MiBand(this);
-                Toast.makeText(this, "Conectando a dispositivo " + device.getName(), Toast.LENGTH_SHORT).show();
-                miBand.connect(device, new ActionCallback() {
-                    @Override
-                    public void onSuccess(Object data) {
-                        Toast.makeText(MainActivity.this, "Dispositivo conectado correctamente!", Toast.LENGTH_SHORT).show();
-                    }
+        }
 
-                    @Override
-                    public void onFail(int errorCode, String msg) {
-                        Toast.makeText(MainActivity.this, "Error de conexión!, code: " + errorCode + " msg: " + msg, Toast.LENGTH_SHORT).show();
-                    }
-                });
-                miBand.pair(new ActionCallback() {
-                    @Override
-                    public void onSuccess(Object data) {
-                        Toast.makeText(MainActivity.this, "Dispositivo vinculado correctamente!", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onFail(int errorCode, String msg) {
-                        Toast.makeText(MainActivity.this, "Error de vinculación!", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                miBand.startVibration(VibrationMode.VIBRATION_WITH_LED);
-            }
         //Guardar estado switch
         switchB=findViewById(R.id.encender_app);
         SharedPreferences sharedPreferences= getSharedPreferences("save",MODE_PRIVATE);
@@ -139,6 +138,7 @@ public class MainActivity extends AppCompatActivity{
             }
         });
 
+
         getAccelerometerValues();
 
         //Si no ha pedido permisos de ubicación los pide, si ya los ha pedido, no hace falta
@@ -147,6 +147,16 @@ public class MainActivity extends AppCompatActivity{
         }else{
             getCurrentLocation();
         }
+    }
+
+    private void calcular_pulsaciones() {
+        final Handler handler=new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                miBand.startHeartRateScan();
+                handler.postDelayed(this, 15000);
+            }
+        }, 0);
     }
 
     @Override
@@ -183,8 +193,10 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void openDatosActivity(){
-        Intent intent =new Intent(this, DatosSensores.class);
-        startActivity(intent);
+        Intent intent =new Intent();
+        intent.putExtra("device", device);
+        intent.setClass(this, DatosSensores.class);
+        this.startActivity(intent);
     }
 
     public void openVinculacionctivity(){
@@ -192,5 +204,34 @@ public class MainActivity extends AppCompatActivity{
         startActivity(intent);
     }
 
+    public void conectar_dispositivo(MiBand miband, BluetoothDevice device){
+        final ProgressDialog pd = ProgressDialog.show(this, "", "Conectando al dispositivo ...");
+        miband.connect(device, new ActionCallback() {
 
+            @Override
+            public void onSuccess(Object data) {
+                //Toast.makeText(ConfirmarVinculacion.this, "Dispositivo conectado correctamente!", Toast.LENGTH_SHORT).show();
+                pd.dismiss();
+                conectado_a=findViewById(R.id.conectado_a);
+                conectado_a.setText("Conectado a: " + device.getName());
+
+                UserInfo userInfo = new UserInfo(20271234, 1, 32, 180, 80, "Usuario", 0);
+                miBand.setUserInfo(userInfo);
+
+
+                miband.setDisconnectedListener(new NotifyListener() {
+                    @Override
+                    public void onNotify(byte[] data) {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onFail(int errorCode, String msg) {
+                pd.dismiss();
+                //Toast.makeText(ConfirmarVinculacion.this, "Error de conexión", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

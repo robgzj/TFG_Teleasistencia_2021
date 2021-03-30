@@ -1,29 +1,54 @@
 
-s
-java:S34576"Q%n should be used in place of \n to produce the platform-specific line separator.(Ä±Èøúÿÿÿÿ8Ô¾éž…/
-ž
-java:S1186:"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÐŠß±8Ô¾éž…/
-\
-java:S1128":Remove this unused import 'com.zhaoxiaodan.miband.MiBand'.(ç‰“Ñùÿÿÿÿ8Â¾½ä…/
-[
-java:S1128">Remove this unused import 'android.bluetooth.BluetoothDevice'.(˜¾Ÿü8Â¾½ä…/
-t
-java:S3252N"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí8Ô¾éž…/
-]	java:S110"<This class has 9 parents which is greater than 5 authorized.(Š—¸úþÿÿÿÿ8¬ ›Ø€/
-[
-java:S1128">Remove this unused import 'android.bluetooth.le.ScanCallback'.(Œ¥Ü 8Â¾½ä…/
-p	java:S116""TRename this field "btn_atras" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÈŸæ8ŽÍšØ€/
-^
-java:S1128"<Remove this unused import 'android.hardware.SensorListener'.(ùŸÍ¡úÿÿÿÿ8Â¾½ä…/
-n
-java:S3457."Q%n should be used in place of \n to produce the platform-specific line separator.(›ˆÒ‹8„†äž…/
-t
-java:S3252N"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí8Ô¾éž…/
-I
-java:S1068!"'Remove this unused "TAG" private field.(¨Îñ¨üÿÿÿÿ8éòÍ£…/
+W
+java:S1128"<Remove this unused import 'android.hardware.SensorListener'.(ùŸÍ¡úÿÿÿÿ
+m
+java:S3252s"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí
+>
+java:S16046"(Make this anonymous inner class a lambda(³ÄËß
+i	java:S100¨"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›¢´öùÿÿÿÿ
 E
-java:S1604+"(Make this anonymous inner class a lambda(³ÄËß8„†äž…/
-^
-java:S1128"<Remove this unused import 'android.bluetooth.le.ScanResult'.(¤Íáùÿÿÿÿ8Â¾½ä…/
-O
-java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8Â¾½ä…/
+java:S1874g"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ
+C
+java:S1604J"(Make this anonymous inner class a lambda(ˆúÕ÷þÿÿÿÿ
+M
+java:S1874©"6Remove this use of "ProgressDialog"; it is deprecated.(Èãùè
+T
+java:S1128">Remove this unused import 'android.bluetooth.le.ScanCallback'.(Œ¥Ü 
+G
+java:S1659+",Declare "txtPulsaciones" on a separate line.(žãŒØùÿÿÿÿ
+—
+java:S1186E"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÐŠß±
+C
+java:S1874©",Remove this use of "show"; it is deprecated.(Èãùè
+i	java:S116*"TRename this field "btn_atras" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÈŸæ
+W
+java:S1128"<Remove this unused import 'android.bluetooth.le.ScanResult'.(¤Íáùÿÿÿÿ
+H
+java:S1659+"-Declare "txtAcelerometro" on a separate line.(žãŒØùÿÿÿÿ
+H
+java:S1128%"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ
+g
+java:S34579"Q%n should be used in place of \n to produce the platform-specific line separator.(›ˆÒ‹
+q	java:S1160"WRename this field "conectado_a2" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄŒ¼…øÿÿÿÿ
+M
+java:S1874©"6Remove this use of "ProgressDialog"; it is deprecated.(Èãùè
+D
+java:S1604·"(Make this anonymous inner class a lambda(Êï ºüÿÿÿÿ
+]
+java:S1128#"GRemove this unused import 'com.zhaoxiaodan.miband.model.VibrationMode'.(ý½ÎÞ
+m
+java:S3252s"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí
+H
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ
+V	java:S110'"<This class has 9 parents which is greater than 5 authorized.(Š—¸úþÿÿÿÿ
+W	java:S125Â"<This block of commented-out lines of code should be removed.(¨œ¢¡ýÿÿÿÿ
+>
+java:S1604g"(Make this anonymous inner class a lambda(„ÑñŒ
+˜
+java:S1186¹"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(þ¨èº
+R	java:S125®"<This block of commented-out lines of code should be removed.(âá˜·
+l
+java:S3457A"Q%n should be used in place of \n to produce the platform-specific line separator.(Ä±Èøúÿÿÿÿ
+o	java:S100{"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—–ˆ¸ÿÿÿÿÿ8ˆÔ¼¢ˆ/
+Q
+java:S1874|"/Remove this use of "Handler"; it is deprecated.(§çµüÿÿÿÿ8ˆÔ¼¢ˆ/

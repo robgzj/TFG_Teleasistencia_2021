@@ -2,6 +2,7 @@ package com.example.tfg_teleasistencia_2021;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.le.ScanCallback;
 import android.bluetooth.le.ScanResult;
@@ -16,6 +17,7 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
@@ -25,19 +27,28 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.zhaoxiaodan.miband.ActionCallback;
 import com.zhaoxiaodan.miband.MiBand;
+import com.zhaoxiaodan.miband.listeners.HeartRateNotifyListener;
+import com.zhaoxiaodan.miband.listeners.NotifyListener;
+import com.zhaoxiaodan.miband.model.UserInfo;
+import com.zhaoxiaodan.miband.model.VibrationMode;
+
+import java.util.Arrays;
 
 public class DatosSensores extends AppCompatActivity {
 
 
-    private static final String TAG = "==[miband]==";
     Button btn_atras;
-    TextView txtUbi;
-    TextView txtAcelerometro;
+    TextView txtUbi, txtAcelerometro, txtPulsaciones;
     Sensor acelerometro;
     private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
     protected LocationManager mLocationManager;
     protected SensorManager mSensorManager;
+    TextView conectado_a2;
+
+    private BluetoothDevice device;
+    private MiBand miBand;
 
 
     protected LocationListener mLocationListener = new LocationListener() {
@@ -60,6 +71,14 @@ public class DatosSensores extends AppCompatActivity {
         }
     };
 
+    protected HeartRateNotifyListener mHealthListener= new HeartRateNotifyListener() {
+        @Override
+        public void onNotify(int heartRate) {
+            txtPulsaciones.setText(heartRate + " LPM");
+        }
+    };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +88,26 @@ public class DatosSensores extends AppCompatActivity {
         btn_atras= findViewById(R.id.boton_atras2);
         btn_atras.setOnClickListener(v -> openMainActivity());
 
+
+
         txtUbi=findViewById(R.id.datos_ubicacion);
         txtAcelerometro=findViewById(R.id.datos_acelerometro);
+        txtPulsaciones=findViewById(R.id.datos_pulsaciones);
+
+        Intent intent = this.getIntent();
+        device = intent.getParcelableExtra("device");
+
+        miBand= new MiBand(this);
+        if(device!= null){
+            conectar_dispositivo(miBand, device);
+            new Handler().postDelayed(new Runnable() {
+                public void run() {
+                    miBand.setHeartRateScanListener(mHealthListener);
+                    calcular_pulsaciones();
+                }
+            }, 1000);
+        }
+
 
         getAccelerometerValues();
 
@@ -81,6 +118,16 @@ public class DatosSensores extends AppCompatActivity {
             getCurrentLocation();
         }
 
+    }
+
+    private void calcular_pulsaciones() {
+            final Handler handler=new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    miBand.startHeartRateScan();
+                    handler.postDelayed(this, 15000);
+                }
+            }, 0);
     }
 
     @Override
@@ -112,7 +159,40 @@ public class DatosSensores extends AppCompatActivity {
     }
 
     public void openMainActivity(){
-        Intent intent =new Intent(this, MainActivity.class);
-        startActivity(intent);
+        Intent intent =new Intent();
+        intent.putExtra("device", device);
+        intent.setClass(this, MainActivity.class);
+        this.startActivity(intent);
+    }
+
+    public void conectar_dispositivo(MiBand miBand, BluetoothDevice device){
+        final ProgressDialog pd = ProgressDialog.show(this, "", "Conectando al dispositivo ...");
+        miBand.connect(device, new ActionCallback() {
+
+            @Override
+            public void onSuccess(Object data) {
+                //Toast.makeText(ConfirmarVinculacion.this, "Dispositivo conectado correctamente!", Toast.LENGTH_SHORT).show();
+                pd.dismiss();
+                conectado_a2=findViewById(R.id.conectado_a2);
+                conectado_a2.setText("Conectado a: " + device.getName());
+
+                UserInfo userInfo = new UserInfo(20271234, 1, 32, 180, 80, "Usuario", 0);
+                miBand.setUserInfo(userInfo);
+
+
+                miBand.setDisconnectedListener(new NotifyListener() {
+                    @Override
+                    public void onNotify(byte[] data) {
+
+                    }
+                });
+            }
+
+            @Override
+            public void onFail(int errorCode, String msg) {
+                pd.dismiss();
+                //Toast.makeText(ConfirmarVinculacion.this, "Error de conexión", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

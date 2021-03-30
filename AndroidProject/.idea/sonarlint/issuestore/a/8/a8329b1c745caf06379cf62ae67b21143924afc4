@@ -1,46 +1,64 @@
 
-c
-java:S1192{"FDefine a constant instead of duplicating this literal "value" 3 times.(ÓÖ ´8ÚÔÈ£…/
-T
-java:S1128
-"7Remove this unused import 'android.app.ProgressDialog'.(¶ÍÔÓ8Ş¾½ä…/
-J
-java:S1604}"(Make this anonymous inner class a lambda(»ĞÃ©ûÿÿÿÿ8ÚÔÈ£…/
-_
-java:S1128#"BRemove this unused import 'com.zhaoxiaodan.miband.model.LedColor'.(Öúè½8Ş¾½ä…/
-M
-java:S1128&"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8Ş¾½ä…/
-L
-java:S1659*"/Declare "btn_datosSensores" on a separate line.(¹ûÌÒ8Æë¼…/
-n
-java:S3457B"Q%n should be used in place of \n to produce the platform-specific line separator.(´ƒîÅ8ªœë…/
-u
-java:S3252‘"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí8ÚÔÈ£…/
-V
-java:S1128"4Remove this unused import 'android.widget.TextView'.(„Ë‚ˆÿÿÿÿÿ8Ş¾½ä…/
-X	java:S110("<This class has 9 parents which is greater than 5 authorized.(²Ú±8Æë¼…/
-s
-java:S3457:"Q%n should be used in place of \n to produce the platform-specific line separator.( Å ±ùÿÿÿÿ8ªœë…/
-r
-java:S14500"URemove the "miBand" field and declare it as a local variable in the relevant methods.(ÛƒŸ›8°õŞ…/
-
-java:S1186F"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ĞŠß±8ªœë…/
-[
-java:S1128"9Remove this unused import 'android.content.IntentFilter'.(ò³ñ£ÿÿÿÿÿ8Ş¾½ä…/
-O
-java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ8Ş¾½ä…/
 E
-java:S16047"(Make this anonymous inner class a lambda(³ÄËß8®¬¿…/
-J
-java:S1659*"-Declare "btn_vinculacion" on a separate line.(¹ûÌÒ8š’É¢…/
-i
-java:S1128""LRemove this unused import 'com.zhaoxiaodan.miband.listeners.NotifyListener'.(´½İÔ8Ş¾½ä…/
-s	java:S116*"WRename this field "btn_acercaDe" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹ûÌÒ8Æë¼…/
-O
-java:S1128"2Remove this unused import 'android.view.MenuItem'.(Ğ¬Ó‘8Ş¾½ä…/
-x	java:S116*"\Rename this field "btn_datosSensores" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹ûÌÒ8Æë¼…/
-v	java:S116*"ZRename this field "btn_vinculacion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹ûÌÒ8š’É¢…/
-u
-java:S3252‘"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí8ÚÔÈ£…/
-`
-java:S1128"CRemove this unused import 'androidx.appcompat.widget.SwitchCompat'.(õÕÂÕ8Ş¾½ä…/
+java:S1874n"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ
+R	java:S125Õ"<This block of commented-out lines of code should be removed.(âá˜·
+X
+java:S1128&"BRemove this unused import 'com.zhaoxiaodan.miband.model.LedColor'.(Öúè½
+>
+java:S1604>"(Make this anonymous inner class a lambda(³ÄËß
+o	java:S116."ZRename this field "btn_vinculacion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹ûÌÒ
+?
+java:S1604Ş"(Make this anonymous inner class a lambda(ç”«
+H
+java:S1128"2Remove this unused import 'android.os.Parcelable'.(õÃÀ­
+E
+java:S1659."/Declare "btn_datosSensores" on a separate line.(¹ûÌÒ
+C
+java:S1604R"(Make this anonymous inner class a lambda(ˆúÕ÷şÿÿÿÿ
+l	java:S116."WRename this field "btn_acercaDe" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹ûÌÒ
+j	java:S1164"VRename this field "conectado_a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İˆ4
+g
+java:S3457I"Q%n should be used in place of \n to produce the platform-specific line separator.(´ƒîÅ
+d	java:S100Ï"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÉñÑé
+˜
+java:S1186à"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ş¨èº
+H
+java:S1128"2Remove this unused import 'android.view.MenuItem'.(Ğ¬Ó‘
+H
+java:S1128"-Remove this unused import 'android.util.Log'.(Ô¦Ø²øÿÿÿÿ
+]
+java:S1128("GRemove this unused import 'com.zhaoxiaodan.miband.model.VibrationMode'.(ı½ÎŞ
+C
+java:S1874Ğ",Remove this use of "show"; it is deprecated.(Èãùè
+>
+java:S1604n"(Make this anonymous inner class a lambda(„ÑñŒ
+M
+java:S1874Ğ"6Remove this use of "ProgressDialog"; it is deprecated.(Èãùè
+M
+java:S1874Ğ"6Remove this use of "ProgressDialog"; it is deprecated.(Èãùè
+l
+java:S3457A"Q%n should be used in place of \n to produce the platform-specific line separator.( Å ±ùÿÿÿÿ
+C
+java:S1659."-Declare "btn_vinculacion" on a separate line.(¹ûÌÒ
+q	java:S116."\Rename this field "btn_datosSensores" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹ûÌÒ
+C
+java:S1604|"(Make this anonymous inner class a lambda(»ĞÃ©ûÿÿÿÿ
+W	java:S125é"<This block of commented-out lines of code should be removed.(¨œ¢¡ıÿÿÿÿ
+F
+java:S1128*"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+\
+java:S1192z"FDefine a constant instead of duplicating this literal "value" 3 times.(ÓÖ ´
+Q	java:S110,"<This class has 9 parents which is greater than 5 authorized.(²Ú±
+T
+java:S1128"9Remove this unused import 'android.content.IntentFilter'.(ò³ñ£ÿÿÿÿÿ
+—
+java:S1186M"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ĞŠß±
+n
+java:S3252‘"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí
+n
+java:S3252‘"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí
+Y
+java:S1128"CRemove this unused import 'androidx.appcompat.widget.SwitchCompat'.(õÕÂÕ
+p	java:S100˜"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—–ˆ¸ÿÿÿÿÿ8Ú»»¢ˆ/
+R
+java:S1874™"/Remove this use of "Handler"; it is deprecated.(§çµüÿÿÿÿ8Ú»»¢ˆ/
