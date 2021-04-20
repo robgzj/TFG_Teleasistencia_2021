@@ -27,6 +27,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,15 @@ import com.zhaoxiaodan.miband.model.LedColor;
 import com.zhaoxiaodan.miband.model.UserInfo;
 import com.zhaoxiaodan.miband.model.VibrationMode;
 
+import org.eclipse.paho.android.service.MqttAndroidClient;
+import org.eclipse.paho.client.mqttv3.IMqttActionListener;
+import org.eclipse.paho.client.mqttv3.IMqttToken;
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
+import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
+
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity{
@@ -46,9 +56,12 @@ public class MainActivity extends AppCompatActivity{
     Button btn_acercaDe, btn_datosSensores, btn_vinculacion;
     Switch switchB;
 
-    String valoresUbicacion;
-    String valoresAcelerometro;
-    String valoresPulsacion;
+    String valorLatitud="0";
+    String valorLongitud="0";
+    String valorX="0";
+    String valorY="0";
+    String valorZ="0";
+    String valoresPulsacion="0";
     TextView conectado_a;
 
     private MiBand miBand;
@@ -59,10 +72,14 @@ public class MainActivity extends AppCompatActivity{
     protected LocationManager mLocationManager;
     protected SensorManager mSensorManager;
 
+    //MQTT
+    MqttAndroidClient client;
+
     protected LocationListener mLocationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
-            valoresUbicacion=(String.format("Latitud: %s\nLongitud: %s", location.getLatitude(), location.getLongitude()));
+            valorLatitud= location.getLatitude() + "";
+            valorLongitud= location.getLongitude() + "";
         }
     };
 
@@ -70,7 +87,9 @@ public class MainActivity extends AppCompatActivity{
     protected SensorEventListener mSensorListener= new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
-            valoresAcelerometro=(String.format("X: %s\nY: %s\nZ: %s",event.values[0], event.values[1], event.values[2]));
+            valorX= event.values[0] +"";
+            valorY= event.values[1] +"";
+            valorZ= event.values[2] +"";
         }
 
         @Override
@@ -119,7 +138,7 @@ public class MainActivity extends AppCompatActivity{
         //Guardar estado switch
         switchB=findViewById(R.id.encender_app);
         SharedPreferences sharedPreferences= getSharedPreferences("save",MODE_PRIVATE);
-        switchB.setChecked(sharedPreferences.getBoolean("value", true));
+        switchB.setChecked(sharedPreferences.getBoolean("value", false));
 
         switchB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,16 +166,71 @@ public class MainActivity extends AppCompatActivity{
         }else{
             getCurrentLocation();
         }
+
+        String clientId =MqttClient.generateClientId();
+        client=new MqttAndroidClient(this.getApplicationContext(), "tcp://mqtt.thingspeak.com:1883", clientId);
+        MqttConnectOptions options =new MqttConnectOptions();
+        //Ponemos el usuario y la contrasenha
+        options.setUserName("mwa0000022240279");
+        options.setPassword("OXEBXSCYAENX76QW".toCharArray());
+
+
+        switchB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    try {
+                        IMqttToken token = client.connect(options);
+                        token.setActionCallback(new IMqttActionListener() {
+                            @Override
+                            public void onSuccess(IMqttToken asyncActionToken) {
+                                // We are connected
+                                Toast.makeText(MainActivity.this, "Conectado a ThingSpeak", Toast.LENGTH_SHORT).show();
+                                publish_topic("channels/1362377/publish/Q38TDPXSWT30IT7T", "field1="+valoresPulsacion+"&field2="+valorX+"&field3="+valorY+"&field4="+valorZ+"&field5="+valorLatitud+"&field6="+valorLongitud);
+
+                            }
+
+                            @Override
+                            public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                                // Something went wrong e.g. connection timeout or firewall problems
+
+                                Toast.makeText(MainActivity.this, "Error de conexion a TS", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                    } catch (MqttException e) {
+                        e.printStackTrace();
+                    }
+            }
+            }
+        });
     }
 
+    private void publish_topic(String topic, String msg){
+            final Handler handler=new Handler();
+            handler.postDelayed(new Runnable() {
+                public void run() {
+                    try {
+                        client.publish(topic, msg.getBytes(), 0, false);
+                        if(!switchB.isChecked()){
+                           return;
+                        }
+                    } catch (MqttException e) {
+                        Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                    handler.postDelayed(this, 15000);
+                }
+            }, 15000);
+
+    }
     private void calcular_pulsaciones() {
         final Handler handler=new Handler();
         handler.postDelayed(new Runnable() {
             public void run() {
                 miBand.startHeartRateScan();
-                handler.postDelayed(this, 15000);
+                handler.postDelayed(this, 14000);
             }
-        }, 0);
+        }, 14000);
     }
 
     @Override

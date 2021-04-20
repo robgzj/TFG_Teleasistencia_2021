@@ -44,4 +44,60 @@ Para leer las pulsaciones necesitamos esperar un breve periodo de tiempo para qu
 
 El metodo que llamara a la medida de pulsaciones se llama calcular_pulsaciones(), este metodo tendra dentro otro handler con un postdelayed que ejecutará el metodó de mirar las pulsaciones y dentro de este tambien habra otra llamada al handler que ejecutará otro post delayed del metodo en si tras 15 segundos, esto hará que se ejecute el metodo de mirar pulsaciones cada 15 segundos, este tiempo se ha elegido así ya que aproximadamente el tiempo máximo de medir pulsaciones es de 9 segundos y dejamos un margen de 5 segundos para poder ver los valores, no sobrecargar la pulsera y que no se le puedan acumular dos lecturas a la vez.
 
+Semana 6:
 
+Añadimos en el build.gradle del proyecto, en repositories:
+
+maven {
+            url "https://repo.eclipse.org/content/repositories/paho-releases/"
+        }
+
+Y en el build.gradle del modulo en dependencies:
+
+implementation('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
+        exclude module: 'support-v4'
+    }
+	
+Y en el fichero del manifest, dentro de <manifest>:
+
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+Y dentro de <application>:
+
+<service android:name="org.eclipse.paho.android.service.MqttService" >
+        </service>
+		
+Usuario y la contraseña del user de ThingSpeak:
+        options.setUserName("mwa0000022240279");
+        options.setPassword("OXEBXSCYAENX76QW".toCharArray());
+
+Prueba suscribir con MQTT.fx a nuestro proyecto:
+channels/(ID_CANAL)/subscribe/json/(READ_API_KEY del canal)
+
+channels/1362377/subscribe/json/XU2DIK5NBQDQP1ME
+
+Prueba para publicar en nuestro proyecto(otro key para escribir):
+
+channels/1362377/publish/Q38TDPXSWT30IT7T
+
+FIELDS:
+
+channels/1362377/publish/fields/field1/Q38TDPXSWT30IT7T
+
+channels/1362377/publish/fields/field2/Q38TDPXSWT30IT7T
+
+channels/1362377/publish/fields/field3/Q38TDPXSWT30IT7T
+
+Webs:
+Publish en MQTT Desktop client:
+https://es.mathworks.com/help/thingspeak/use-desktop-mqtt-client-to-publish-to-a-channel.html
+
+Suscribe en MQTT Desktop client:
+https://es.mathworks.com/help/thingspeak/use-desktop-mqtt-client-to-subscribe-to-channel-updates.html	
+
+Guia de como hacer MQTT en android (No ThingSpeak)
+https://www.youtube.com/watch?v=BAkGm02WBc0
+https://www.hivemq.com/blog/mqtt-client-library-enyclopedia-paho-android-service/
