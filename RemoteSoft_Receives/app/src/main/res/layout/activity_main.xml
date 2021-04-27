@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logo_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/logo_app_receives" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/info_TS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/configurar_TS"
+            android:layout_below="@id/configurar_TS"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="false"
+            android:layout_margin="25dp"
+            android:gravity="center"
+            android:text="INFORMACION" />
+
+        <Switch
+            android:id="@+id/encender_app"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_above="@id/acerca_de"
+            android:layout_below="@id/configurar_TS"
+            android:layout_centerHorizontal="true"
+            android:checked="false"
+            android:scaleX="3"
+            android:scaleY="3"
+            android:showText="false"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/configurar_TS"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="false"
+            android:layout_centerInParent="true"
+            android:text="Configurar ThingSpeak"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/acerca_de"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="25dp"
+            android:text="Acerca de" />
+
+    </RelativeLayout>
+
+</LinearLayout>

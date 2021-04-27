@@ -101,3 +101,9 @@ https://es.mathworks.com/help/thingspeak/use-desktop-mqtt-client-to-subscribe-to
 Guia de como hacer MQTT en android (No ThingSpeak)
 https://www.youtube.com/watch?v=BAkGm02WBc0
 https://www.hivemq.com/blog/mqtt-client-library-enyclopedia-paho-android-service/
+
+Semana 7
+
+A la hora de enviar a ThingSpeak me di cuenta que no hace falta el usuario ni la key de mqtt, en cambio para recibir datos si hace falta
+
+La nueva app de recibir recibe correctamente del canal indicado, solo falta parsear el string

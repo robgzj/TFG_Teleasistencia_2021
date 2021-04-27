@@ -1,0 +1,12 @@
+com/example/remotesoft_receives/BuildConfig.java
+ com.example.remotesoft_receives.BuildConfig
+com/example/remotesoft_receives/AcercaDe.java
+ com.example.remotesoft_receives.AcercaDe
+com/example/remotesoft_receives/MainActivity.java
+ com.example.remotesoft_receives.MainActivity
+ com.example.remotesoft_receives.MainActivity$1
+ com.example.remotesoft_receives.MainActivity$2
+ com.example.remotesoft_receives.MainActivity$2$1
+ com.example.remotesoft_receives.MainActivity$2$1$1
+ com.example.remotesoft_receives.MainActivity$3
+ com.example.remotesoft_receives.MainActivity$4

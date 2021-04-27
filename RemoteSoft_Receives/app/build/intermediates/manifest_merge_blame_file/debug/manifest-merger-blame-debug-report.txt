@@ -1,0 +1,66 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.remotesoft_receives"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="30"
+8-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="30" />
+9-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.WAKE_LOCK" />
+11-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:6:5-68
+11-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:6:22-65
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:7:5-67
+12-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:7:22-64
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:8:5-79
+13-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:8:22-76
+14    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+14-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:9:5-75
+14-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:9:22-72
+15
+16    <application
+16-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:11:5-27:19
+17        android:allowBackup="true"
+17-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:12:9-35
+18        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+18-->[androidx.core:core:1.3.1] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\8dbd859d1cd89239b42e7382b4fc40d7\core-1.3.1\AndroidManifest.xml:24:18-86
+19        android:debuggable="true"
+20        android:extractNativeLibs="false"
+21        android:icon="@mipmap/logo_app"
+21-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:13:9-40
+22        android:label="@string/app_name"
+22-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:14:9-41
+23        android:roundIcon="@mipmap/logo_app_round"
+23-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:15:9-51
+24        android:supportsRtl="true"
+24-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:16:9-35
+25        android:testOnly="true"
+26        android:theme="@style/Theme.RemoteSoft_Receives" >
+26-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:17:9-57
+27        <activity android:name="com.example.remotesoft_receives.MainActivity" >
+27-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:18:9-24:20
+27-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:18:19-47
+28            <intent-filter>
+28-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:19:13-23:29
+29                <action android:name="android.intent.action.MAIN" />
+29-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:20:17-69
+29-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:20:25-66
+30
+31                <category android:name="android.intent.category.LAUNCHER" />
+31-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:22:17-77
+31-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:22:27-74
+32            </intent-filter>
+33        </activity>
+34
+35        <service android:name="org.eclipse.paho.android.service.MqttService" >
+35-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:25:9-26:19
+35-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:25:18-77
+36        </service>
+37    </application>
+38
+39</manifest>

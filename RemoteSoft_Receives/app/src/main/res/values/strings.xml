@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RemoteSoft Receives</string>
+    <string name="info_app">
+        Aplicación desarollada por Roberto González Jiménez.
+        Su objetivo es la lectura de datos recibidos por ThingSpeak, los cuales se han enviado con la aplicación RemoteSoft.
+        Para que funcione la app es necesario tener conexión a internet.
+    </string>
+    <string name="boton_atras">Atrás</string>
+</resources>
