@@ -6,4 +6,5 @@
         Para que funcione la app es necesario tener conexión a internet.
     </string>
     <string name="boton_atras">Atrás</string>
+    <string name="map_key" translatable="false">AIzaSyB_qsP8AOP_P0MdlPz-48TDaJYjTP3vbjo</string>
 </resources>

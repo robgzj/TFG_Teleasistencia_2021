@@ -39,4 +39,6 @@ dependencies {
     implementation('org.eclipse.paho:org.eclipse.paho.android.service:1.0.2') {
         exclude module: 'support-v4'
     }
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
 }

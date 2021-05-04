@@ -18,17 +18,46 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/info_TS"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/ver_Pulsaciones"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_above="@id/configurar_TS"
-            android:layout_below="@id/configurar_TS"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="false"
-            android:layout_margin="25dp"
-            android:gravity="center"
-            android:text="INFORMACION" />
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="false"
+            android:layout_centerInParent="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="15dp"
+            android:text="ver Pulsaciones"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/ver_Ubicacion"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ver_Pulsaciones"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="false"
+            android:layout_centerInParent="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:text="Ver Ubicacion"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/ver_Acelerometro"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ver_Ubicacion"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="false"
+            android:layout_centerInParent="false"
+            android:layout_centerHorizontal="true"
+            android:text="ver Acelerometro"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible" />
 
         <Switch
             android:id="@+id/encender_app"

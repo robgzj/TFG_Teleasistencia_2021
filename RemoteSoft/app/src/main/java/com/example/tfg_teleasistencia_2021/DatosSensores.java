@@ -38,7 +38,6 @@ import java.util.Arrays;
 
 public class DatosSensores extends AppCompatActivity {
 
-
     Button btn_atras;
     TextView txtUbi, txtAcelerometro, txtPulsaciones;
     Sensor acelerometro;
@@ -87,8 +86,6 @@ public class DatosSensores extends AppCompatActivity {
 
         btn_atras= findViewById(R.id.boton_atras2);
         btn_atras.setOnClickListener(v -> openMainActivity());
-
-
 
         txtUbi=findViewById(R.id.datos_ubicacion);
         txtAcelerometro=findViewById(R.id.datos_acelerometro);

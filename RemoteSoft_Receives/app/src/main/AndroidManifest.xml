@@ -2,11 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.remotesoft_receives">
 
-
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
+
 
     <application
         android:allowBackup="true"
@@ -15,6 +19,14 @@
         android:roundIcon="@mipmap/logo_app_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RemoteSoft_Receives">
+
+        <meta-data android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_key"/>
+
+        <activity android:name=".AcercaDe"></activity>
+        <activity android:name=".verAcelerometro" />
+        <activity android:name=".verUbicacion" />
+        <activity android:name=".verPulsaciones" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,8 +34,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="org.eclipse.paho.android.service.MqttService" >
-        </service>
+
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
     </application>
 
 </manifest>

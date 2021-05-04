@@ -1,4 +1,4 @@
-package com.example.tfg_teleasistencia_2021;
+    package com.example.tfg_teleasistencia_2021;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity{
     String valoresPulsacion="0";
     TextView conectado_a;
 
+    SharedPreferences.Editor editor;
+    SharedPreferences sharedPreferences;
 
     private MiBand miBand;
     private BluetoothDevice device;
@@ -67,8 +69,8 @@ public class MainActivity extends AppCompatActivity{
 
     //MQTT
     MqttAndroidClient client;
-    String channelID="1362377";
-    String WRITE_API_KEY ="Q38TDPXSWT30IT7T";
+    String channelID;
+    String WRITE_API_KEY;
 
     protected LocationListener mLocationListener = new LocationListener() {
         @Override
@@ -135,26 +137,22 @@ public class MainActivity extends AppCompatActivity{
 
         //Guardar estado switch
         switchB=findViewById(R.id.encender_app);
-        SharedPreferences sharedPreferences= getSharedPreferences("save",MODE_PRIVATE);
+        sharedPreferences= getSharedPreferences("save",MODE_PRIVATE);
         switchB.setChecked(sharedPreferences.getBoolean("value", false));
 
         switchB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(switchB.isChecked()){
-                    SharedPreferences.Editor editor=getSharedPreferences("save",MODE_PRIVATE).edit();
-                    editor.putBoolean("value",true);
-                    editor.apply();
-                    switchB.setChecked(true);
+                        switchActivado();
                 }else{
-                    SharedPreferences.Editor editor=getSharedPreferences("save",MODE_PRIVATE).edit();
+                    editor=getSharedPreferences("save",MODE_PRIVATE).edit();
                     editor.putBoolean("value",false);
                     editor.apply();
                     switchB.setChecked(false);
                 }
             }
         });
-
 
         getAccelerometerValues();
 
@@ -165,41 +163,15 @@ public class MainActivity extends AppCompatActivity{
             getCurrentLocation();
         }
 
+        if(switchB.isChecked()){
+            switchActivado();
+        }else{
+            editor=getSharedPreferences("save",MODE_PRIVATE).edit();
+            editor.putBoolean("value",false);
+            editor.apply();
+            switchB.setChecked(false);
+        }
 
-
-
-
-        switchB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    try {
-                        String clientId =MqttClient.generateClientId();
-                        client=new MqttAndroidClient(MainActivity.this.getApplicationContext(), "tcp://mqtt.thingspeak.com:1883", clientId);
-                        IMqttToken token = client.connect();
-                        token.setActionCallback(new IMqttActionListener() {
-                            @Override
-                            public void onSuccess(IMqttToken asyncActionToken) {
-                                // We are connected
-                                Toast.makeText(MainActivity.this,"Conectado a ThingSpeak", Toast.LENGTH_SHORT).show();
-                                publish_topic("channels/"+channelID+"/publish/" + WRITE_API_KEY, "field1="+valoresPulsacion+"&field2="+valorX+"&field3="+valorY+"&field4="+valorZ+"&field5="+valorLatitud+"&field6="+valorLongitud);
-
-                            }
-
-                            @Override
-                            public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                                // Something went wrong e.g. connection timeout or firewall problems
-
-                                Toast.makeText(MainActivity.this, "Error de conexion a TS", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    }
-            }
-            }
-        });
     }
 
     private void publish_topic(String topic, String msg){
@@ -258,8 +230,8 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void openAcercaDeActivity(){
-        Intent intent =new Intent(this, AcercaDe.class);
-        startActivity(intent);
+            Intent intent =new Intent(this, AcercaDe.class);
+            startActivity(intent);
     }
 
     public void openDatosActivity(){
@@ -272,6 +244,44 @@ public class MainActivity extends AppCompatActivity{
     public void openVinculacionctivity(){
         Intent intent =new Intent(this, VinculacionPulsera.class);
         startActivity(intent);
+    }
+
+    private void switchActivado(){
+        editor=getSharedPreferences("save",MODE_PRIVATE).edit();
+        editor.putBoolean("value",true);
+        editor.apply();
+        switchB.setChecked(true);
+        try {
+            channelID=sharedPreferences.getString("canal","");
+            WRITE_API_KEY=sharedPreferences.getString("writeKEY","");;
+
+            if(channelID.equals("") || WRITE_API_KEY.equals("")){
+                channelID="1362377";
+                WRITE_API_KEY ="Q38TDPXSWT30IT7T";
+            }
+            String clientId =MqttClient.generateClientId();
+            client=new MqttAndroidClient(MainActivity.this.getApplicationContext(), "tcp://mqtt.thingspeak.com:1883", clientId);
+            IMqttToken token = client.connect();
+            token.setActionCallback(new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken asyncActionToken) {
+                    // We are connected
+                    Toast.makeText(MainActivity.this,"Conectado a ThingSpeak", Toast.LENGTH_SHORT).show();
+                    publish_topic("channels/"+channelID+"/publish/" + WRITE_API_KEY, "field1="+valoresPulsacion+"&field2="+valorX+"&field3="+valorY+"&field4="+valorZ+"&field5="+valorLatitud+"&field6="+valorLongitud);
+
+                }
+
+                @Override
+                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                    // Something went wrong e.g. connection timeout or firewall problems
+
+                    Toast.makeText(MainActivity.this, "Error de conexion a TS", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
     }
 
     private void openConfigThingSpeak() {
@@ -293,8 +303,12 @@ public class MainActivity extends AppCompatActivity{
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                channelID=channelID_Box.getText().toString();
-                WRITE_API_KEY =WRITE_API_KEY_Box.getText().toString();
+
+                editor=getSharedPreferences("save",MODE_PRIVATE).edit();
+                editor.putString("canal",channelID_Box.getText().toString());
+                editor.putString("writeKEY",WRITE_API_KEY_Box.getText().toString());
+                editor.apply();
+                switchB.setChecked(false);
             }
         });
 

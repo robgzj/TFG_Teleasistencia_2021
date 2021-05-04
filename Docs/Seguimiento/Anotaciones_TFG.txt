@@ -107,3 +107,9 @@ Semana 7
 A la hora de enviar a ThingSpeak me di cuenta que no hace falta el usuario ni la key de mqtt, en cambio para recibir datos si hace falta
 
 La nueva app de recibir recibe correctamente del canal indicado, solo falta parsear el string
+
+Semana 8
+
+Añadido en el manifiesto y el build.gradle los descriptores necesarios para cargar el mapa en google maps
+
+https://www.youtube.com/watch?v=boyyLhXAZAQ

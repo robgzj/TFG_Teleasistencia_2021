@@ -18,6 +18,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.JsonReader;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -41,22 +42,31 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.json.JSONObject;
+
+import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
 
     Button btn_acercaDe, btn_configTS;
     Switch switchB;
 
-    TextView infoTS;
+    Button btn_pulsaciones, btn_ubicacion, btn_acelerometro;
+    SharedPreferences.Editor editor;
+    SharedPreferences sharedPreferences;
     //MQTT
     MqttAndroidClient client;
-    String username="mwa0000022240279";
-    String MQTT_API_Key="OXEBXSCYAENX76QW";
-    String channelID="1362377";
-    String READ_API_KEY ="XU2DIK5NBQDQP1ME";
+    String username;
+    String MQTT_API_Key;
+    String channelID;
+    String READ_API_KEY;
 
+    String textoJSON;
+    JSONObject jsonObject;
 
-
+    double latitud,longitud;
+    int pulsaciones;
+    double cor_x, cor_y,cor_z;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,96 +75,52 @@ public class MainActivity extends AppCompatActivity {
         btn_acercaDe = findViewById(R.id.acerca_de);
         btn_acercaDe.setOnClickListener(v -> openAcercaDeActivity());
 
-
         btn_configTS = findViewById(R.id.configurar_TS);
         btn_configTS.setOnClickListener(v -> openConfigThingSpeak());
 
-        infoTS= findViewById(R.id.info_TS);
+        btn_pulsaciones=findViewById(R.id.ver_Pulsaciones);
+        btn_pulsaciones.setOnClickListener(v -> openVerPulsacionesActivity());
+
+        btn_ubicacion=findViewById(R.id.ver_Ubicacion);
+        btn_ubicacion.setOnClickListener(v -> openVerUbicacionActivity());
+
+        btn_acelerometro=findViewById(R.id.ver_Acelerometro);
+        btn_acelerometro.setOnClickListener(v -> openVerAcelerometroActivity());
 
         //Guardar estado switch
         switchB=findViewById(R.id.encender_app);
-        SharedPreferences sharedPreferences= getSharedPreferences("save",MODE_PRIVATE);
+        sharedPreferences= getSharedPreferences("save",MODE_PRIVATE);
         switchB.setChecked(sharedPreferences.getBoolean("value", false));
+
 
         switchB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(switchB.isChecked()){
-                    SharedPreferences.Editor editor=getSharedPreferences("save",MODE_PRIVATE).edit();
-                    editor.putBoolean("value",true);
-                    editor.apply();
-                    switchB.setChecked(true);
+                    switchActivado();
                 }else{
-                    SharedPreferences.Editor editor=getSharedPreferences("save",MODE_PRIVATE).edit();
+                    editor=getSharedPreferences("save",MODE_PRIVATE).edit();
                     editor.putBoolean("value",false);
                     editor.apply();
                     switchB.setChecked(false);
+                    btn_pulsaciones.setVisibility(View.INVISIBLE);
+                    btn_ubicacion.setVisibility(View.INVISIBLE);
+                    btn_acelerometro.setVisibility(View.INVISIBLE);
                 }
             }
         });
 
-
-
-
-        switchB.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    try {
-                        String clientId =MqttClient.generateClientId();
-                        client=new MqttAndroidClient(MainActivity.this.getApplicationContext(), "tcp://mqtt.thingspeak.com:1883", clientId);
-
-                        MqttConnectOptions options=new MqttConnectOptions();
-                        options.setUserName(username);
-                        options.setPassword(MQTT_API_Key.toCharArray());
-
-                        IMqttToken token = client.connect(options);
-                        token.setActionCallback(new IMqttActionListener() {
-                            @Override
-                            public void onSuccess(IMqttToken asyncActionToken) {
-                                // We are connected
-                                Toast.makeText(MainActivity.this,"Conectado a ThingSpeak", Toast.LENGTH_SHORT).show();
-                                try {
-                                    client.subscribe("channels/"+ channelID+"/subscribe/json/"+READ_API_KEY,0);
-
-                                    client.setCallback(new MqttCallback() {
-                                        @Override
-                                        public void connectionLost(Throwable cause) {
-
-                                        }
-
-                                        @Override
-                                        public void messageArrived(String topic, MqttMessage message) throws Exception {
-                                            infoTS.setText(new String(message.getPayload()));
-                                            //Aqui hacer el parseo
-                                        }
-
-                                        @Override
-                                        public void deliveryComplete(IMqttDeliveryToken token) {
-
-                                        }
-                                    });
-
-                                } catch (MqttException e) {
-                                    e.printStackTrace();
-                                }
-
-                            }
-
-                            @Override
-                            public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                                // Something went wrong e.g. connection timeout or firewall problems
-                                Toast.makeText(MainActivity.this, "Error de conexion a TS", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-
-
-                    } catch (MqttException e) {
-                        e.printStackTrace();
-                    }
-            }
-            }
-        });
+        if(switchB.isChecked()){
+            switchActivado();
+        }else{
+            editor=getSharedPreferences("save",MODE_PRIVATE).edit();
+            editor.putBoolean("value",false);
+            editor.apply();
+            switchB.setChecked(false);
+            btn_pulsaciones.setVisibility(View.INVISIBLE);
+            btn_ubicacion.setVisibility(View.INVISIBLE);
+            btn_acelerometro.setVisibility(View.INVISIBLE);
+        }
     }
 
 
@@ -163,6 +129,122 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void openVerPulsacionesActivity(){
+        Intent intent = new Intent();
+        intent.putExtra("pulsaciones", pulsaciones);
+        intent.setClass(this, verPulsaciones.class);
+        startActivity(intent);
+
+    }
+
+    public void openVerUbicacionActivity(){
+        Intent intent = new Intent();
+        intent.putExtra("latitud", latitud);
+        intent.putExtra("longitud", longitud);
+        intent.setClass(this, verUbicacion.class);
+        startActivity(intent);
+
+    }
+
+    public void openVerAcelerometroActivity(){
+        Intent intent = new Intent();
+        intent.putExtra("cor_x", cor_x);
+        intent.putExtra("cor_y", cor_y);
+        intent.putExtra("cor_z", cor_z);
+        intent.setClass(this, verAcelerometro.class);
+        startActivity(intent);
+
+    }
+
+    private void switchActivado(){
+        editor=getSharedPreferences("save",MODE_PRIVATE).edit();
+        editor.putBoolean("value",true);
+        editor.apply();
+        switchB.setChecked(true);
+
+        try {
+
+            btn_pulsaciones.setVisibility(View.VISIBLE);
+            btn_ubicacion.setVisibility(View.VISIBLE);
+            btn_acelerometro.setVisibility(View.VISIBLE);
+
+            channelID=sharedPreferences.getString("canal","");
+            READ_API_KEY=sharedPreferences.getString("readKEY","");;
+            MQTT_API_Key=sharedPreferences.getString("MQTTKey","");
+            username=sharedPreferences.getString("username","");;
+
+            if(channelID.equals("")|| READ_API_KEY.equals("")|| MQTT_API_Key.equals("") || username.equals("")){
+                channelID="1362377";
+                READ_API_KEY ="XU2DIK5NBQDQP1ME";
+                MQTT_API_Key="OXEBXSCYAENX76QW";
+                username="mwa0000022240279";
+            }
+
+            String clientId =MqttClient.generateClientId();
+            client=new MqttAndroidClient(MainActivity.this.getApplicationContext(), "tcp://mqtt.thingspeak.com:1883", clientId);
+
+            MqttConnectOptions options=new MqttConnectOptions();
+            options.setUserName(username);
+            options.setPassword(MQTT_API_Key.toCharArray());
+
+            IMqttToken token = client.connect(options);
+            token.setActionCallback(new IMqttActionListener() {
+                @Override
+                public void onSuccess(IMqttToken asyncActionToken) {
+                    // We are connected
+                    Toast.makeText(MainActivity.this,"Conectado a ThingSpeak", Toast.LENGTH_SHORT).show();
+                    try {
+                        client.subscribe("channels/"+ channelID+"/subscribe/json/"+READ_API_KEY,0);
+
+                        client.setCallback(new MqttCallback() {
+                            @Override
+                            public void connectionLost(Throwable cause) {
+
+                            }
+
+                            @Override
+                            public void messageArrived(String topic, MqttMessage message) throws Exception {
+                                textoJSON=new String(message.getPayload());
+                                //Aqui hacer el parseo
+                                jsonObject=new JSONObject(textoJSON);
+                                pulsaciones=jsonObject.getInt("field1");
+
+                                cor_x=jsonObject.getDouble("field2");
+                                cor_y=jsonObject.getDouble("field3");
+                                cor_z=jsonObject.getDouble("field4");
+
+                                latitud=jsonObject.getDouble("field5");
+                                longitud=jsonObject.getDouble("field6");
+
+                                //Toast.makeText(MainActivity.this, pulsaciones + cor_x+ cor_y + cor_z + latitud + longitud, Toast.LENGTH_LONG).show();
+
+
+                            }
+
+                            @Override
+                            public void deliveryComplete(IMqttDeliveryToken token) {
+
+                            }
+                        });
+
+                    } catch (MqttException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+
+                @Override
+                public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                    // Something went wrong e.g. connection timeout or firewall problems
+                    Toast.makeText(MainActivity.this, "Error de conexion a TS", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void openConfigThingSpeak() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -195,6 +277,15 @@ public class MainActivity extends AppCompatActivity {
                 MQTT_API_Key=MQTT_API_Key_Box.getText().toString();
                 channelID=channelID_Box.getText().toString();
                 READ_API_KEY =READ_API_KEY_Box.getText().toString();
+
+
+                editor=getSharedPreferences("save",MODE_PRIVATE).edit();
+                editor.putString("canal",channelID_Box.getText().toString());
+                editor.putString("readKEY",READ_API_KEY_Box.getText().toString());
+                editor.putString("MQTTKey",MQTT_API_Key_Box.getText().toString());
+                editor.putString("username",username_Box.getText().toString());
+                editor.apply();
+                switchB.setChecked(false);
             }
         });
 

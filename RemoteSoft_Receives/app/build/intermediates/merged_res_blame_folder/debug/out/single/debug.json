@@ -48,6 +48,10 @@
         "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\mipmap-mdpi\\logo_app_round.png"
     },
     {
+        "merged": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_ver_acelerometro.xml.flat",
+        "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\layout\\activity_ver_acelerometro.xml"
+    },
+    {
         "merged": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
@@ -84,16 +88,16 @@
         "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_ver_ubicacion.xml.flat",
+        "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\layout\\activity_ver_ubicacion.xml"
+    },
+    {
         "merged": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_logo_app_foreground.png.flat",
         "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\mipmap-mdpi\\logo_app_foreground.png"
     },
     {
         "merged": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\build\\intermediates\\res\\merged\\debug\\layout_acercade_layout.xml.flat",
-        "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\layout\\acercade_layout.xml"
     },
     {
         "merged": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_logo_app.xml.flat",
@@ -108,6 +112,10 @@
         "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_acerca_de.xml.flat",
+        "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\layout\\activity_acerca_de.xml"
+    },
+    {
         "merged": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
     },
@@ -118,6 +126,10 @@
     {
         "merged": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\build\\intermediates\\res\\merged\\debug\\drawable_logo_app_background.xml.flat",
         "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\drawable\\logo_app_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_ver_pulsaciones.xml.flat",
+        "source": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\src\\main\\res\\layout\\activity_ver_pulsaciones.xml"
     },
     {
         "merged": "C:\\Users\\GORDO\\Documents\\MEGA\\MEGAsync Uploads\\UNI\\TFG\\RemoteSoft_Receives\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_logo_app.png.flat",
