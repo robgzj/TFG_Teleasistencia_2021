@@ -54,7 +54,7 @@ public class verUbicacion extends  AppCompatActivity implements OnMapReadyCallba
         LatLng latLng=new LatLng(latitud, longitud);
         MarkerOptions markerOptions = new MarkerOptions().position(latLng).title("Ultima Posicion");
         googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,8));
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,19));
         googleMap.addMarker(markerOptions);
     }
 }

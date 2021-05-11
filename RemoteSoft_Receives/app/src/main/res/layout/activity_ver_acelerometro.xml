@@ -34,7 +34,7 @@
                     android:text="Coordenada X" />
 
                 <TextView
-                    android:id="@+id/datos_latitud"
+                    android:id="@+id/datos_cor_x"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"

@@ -3,8 +3,13 @@ package com.example.remotesoft_receives;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,9 +21,12 @@ import android.hardware.SensorManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.media.RingtoneManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.JsonReader;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -31,6 +39,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
@@ -67,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     double latitud,longitud;
     int pulsaciones;
     double cor_x, cor_y,cor_z;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -121,8 +132,29 @@ public class MainActivity extends AppCompatActivity {
             btn_ubicacion.setVisibility(View.INVISIBLE);
             btn_acelerometro.setVisibility(View.INVISIBLE);
         }
+
     }
 
+    public void showNotification(Context context, String title, String message, Intent intent, int reqCode) {
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, reqCode, intent, PendingIntent.FLAG_ONE_SHOT);
+        String CHANNEL_ID = "channel_name";// The id of the channel.
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context, CHANNEL_ID)
+                .setSmallIcon(R.mipmap.logo_app_round)
+                .setContentTitle(title)
+                .setContentText(message)
+                .setAutoCancel(true)
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setContentIntent(pendingIntent);
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "Channel Name";// The user-visible name of the channel.
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, name, importance);
+            notificationManager.createNotificationChannel(mChannel);
+        }
+        notificationManager.notify(reqCode, notificationBuilder.build()); // 0 is the request code, it should be unique id
+    }
 
     public void openAcercaDeActivity(){
         Intent intent =new Intent(this, AcercaDe.class);
@@ -217,6 +249,11 @@ public class MainActivity extends AppCompatActivity {
                                 longitud=jsonObject.getDouble("field6");
 
                                 //Toast.makeText(MainActivity.this, pulsaciones + cor_x+ cor_y + cor_z + latitud + longitud, Toast.LENGTH_LONG).show();
+
+                                if(pulsaciones >= 100){
+                                    showNotification(MainActivity.this,"ALARMA", "Pulsaciones igual o superior a 100 LPM", new Intent(),0);
+                                }
+
 
 
                             }

@@ -1880,9 +1880,9 @@ int id customPanel 0x7f08007d
 int id cut 0x7f08007e
 int id dark 0x7f08007f
 int id date_picker_actions 0x7f080080
-int id datos_cor_y 0x7f080081
-int id datos_cor_z 0x7f080082
-int id datos_latitud 0x7f080083
+int id datos_cor_x 0x7f080081
+int id datos_cor_y 0x7f080082
+int id datos_cor_z 0x7f080083
 int id datos_pulsaciones 0x7f080084
 int id decelerate 0x7f080085
 int id decelerateAndComplete 0x7f080086

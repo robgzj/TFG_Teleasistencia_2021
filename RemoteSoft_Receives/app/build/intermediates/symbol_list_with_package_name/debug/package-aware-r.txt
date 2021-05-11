@@ -1881,9 +1881,9 @@ id customPanel
 id cut
 id dark
 id date_picker_actions
+id datos_cor_x
 id datos_cor_y
 id datos_cor_z
-id datos_latitud
 id datos_pulsaciones
 id decelerate
 id decelerateAndComplete
