@@ -23,10 +23,10 @@
         <meta-data android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key"/>
 
-        <activity android:name=".AcercaDe"></activity>
-        <activity android:name=".verAcelerometro" />
-        <activity android:name=".verUbicacion" />
-        <activity android:name=".verPulsaciones" />
+        <activity android:name=".AcercaDeActivity"></activity>
+        <activity android:name=".verAcelerometroActivity" />
+        <activity android:name=".verUbicacionActivity" />
+        <activity android:name=".verPulsacionesActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

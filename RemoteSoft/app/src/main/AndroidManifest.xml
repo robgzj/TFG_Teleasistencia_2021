@@ -20,10 +20,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TFG_Teleasistencia_2021">
 
-        <activity android:name=".AcercaDe"></activity>
-        <activity android:name=".DatosSensores"></activity>
-        <activity android:name=".VinculacionPulsera"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activities.AcercaDeActivity"></activity>
+        <activity android:name=".Activities.DatosSensoresActivity"></activity>
+        <activity android:name=".Activities.VinculacionPulseraActivity"></activity>
+        <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -113,3 +113,13 @@ Semana 8
 Añadido en el manifiesto y el build.gradle los descriptores necesarios para cargar el mapa en google maps
 
 https://www.youtube.com/watch?v=boyyLhXAZAQ
+
+Semana 10:
+
+Añadido sistema de deteccion de caidas
+Arreglar bugs
+Crear una clase pulsera con todo el tema de conectar y calcular pulsaciones
+Pasar datos a enviar por TS de String a sus respectivos tipos de datos
+
+Falta por solucionar:
+Como parar los handler(parar envio de datos y calculo de pulsaciones)

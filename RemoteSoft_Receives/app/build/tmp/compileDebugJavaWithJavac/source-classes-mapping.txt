@@ -1,13 +1,9 @@
-com/example/remotesoft_receives/AcercaDe.java
- com.example.remotesoft_receives.AcercaDe
-com/example/remotesoft_receives/verAcelerometro.java
- com.example.remotesoft_receives.verAcelerometro
-com/example/remotesoft_receives/BuildConfig.java
- com.example.remotesoft_receives.BuildConfig
-com/example/remotesoft_receives/verUbicacion.java
- com.example.remotesoft_receives.verUbicacion
-com/example/remotesoft_receives/verPulsaciones.java
- com.example.remotesoft_receives.verPulsaciones
+com/example/remotesoft_receives/AcercaDeActivity.java
+ com.example.remotesoft_receives.AcercaDeActivity
+com/example/remotesoft_receives/verPulsacionesActivity.java
+ com.example.remotesoft_receives.verPulsacionesActivity
+ com.example.remotesoft_receives.verPulsacionesActivity$1
+ com.example.remotesoft_receives.verPulsacionesActivity$1$1
 com/example/remotesoft_receives/MainActivity.java
  com.example.remotesoft_receives.MainActivity
  com.example.remotesoft_receives.MainActivity$1
@@ -15,3 +11,13 @@ com/example/remotesoft_receives/MainActivity.java
  com.example.remotesoft_receives.MainActivity$2$1
  com.example.remotesoft_receives.MainActivity$3
  com.example.remotesoft_receives.MainActivity$4
+com/example/remotesoft_receives/BuildConfig.java
+ com.example.remotesoft_receives.BuildConfig
+com/example/remotesoft_receives/verAcelerometroActivity.java
+ com.example.remotesoft_receives.verAcelerometroActivity
+ com.example.remotesoft_receives.verAcelerometroActivity$1
+ com.example.remotesoft_receives.verAcelerometroActivity$1$1
+com/example/remotesoft_receives/verUbicacionActivity.java
+ com.example.remotesoft_receives.verUbicacionActivity
+ com.example.remotesoft_receives.verUbicacionActivity$1
+ com.example.remotesoft_receives.verUbicacionActivity$1$1

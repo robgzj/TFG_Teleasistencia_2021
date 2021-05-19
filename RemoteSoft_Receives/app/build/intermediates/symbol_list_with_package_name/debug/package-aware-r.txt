@@ -1881,6 +1881,7 @@ id customPanel
 id cut
 id dark
 id date_picker_actions
+id datos_caida
 id datos_cor_x
 id datos_cor_y
 id datos_cor_z
@@ -1966,6 +1967,7 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labelGroup
+id label_caida
 id label_cor_x
 id label_cor_y
 id label_cor_z

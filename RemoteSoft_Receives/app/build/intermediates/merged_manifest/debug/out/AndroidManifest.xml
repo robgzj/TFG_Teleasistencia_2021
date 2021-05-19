@@ -35,10 +35,10 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
 
-        <activity android:name="com.example.remotesoft_receives.AcercaDe" />
-        <activity android:name="com.example.remotesoft_receives.verAcelerometro" />
-        <activity android:name="com.example.remotesoft_receives.verUbicacion" />
-        <activity android:name="com.example.remotesoft_receives.verPulsaciones" />
+        <activity android:name="com.example.remotesoft_receives.AcercaDeActivity" />
+        <activity android:name="com.example.remotesoft_receives.verAcelerometroActivity" />
+        <activity android:name="com.example.remotesoft_receives.verUbicacionActivity" />
+        <activity android:name="com.example.remotesoft_receives.verPulsacionesActivity" />
         <activity android:name="com.example.remotesoft_receives.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

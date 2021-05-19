@@ -91,7 +91,23 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="3" />
+            android:layout_weight="3" >
+
+            <TextView
+                android:id="@+id/label_caida"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Caida" />
+
+            <TextView
+                android:id="@+id/hay_caida"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@null" />
+
+        </TableRow>
 
     </TableLayout>
 

@@ -1,12 +1,0 @@
-
-J
-java:S1604Q"(Make this anonymous inner class a lambda(¥Ò­´üÿÿÿÿ8ê³Ú…/
-J
-java:S1604@"(Make this anonymous inner class a lambda(Œæëüÿÿÿÿ8”¾½Ú…/
-r	java:S116"VRename this field "switch_scan" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æëó8Ó–±Ù…/
-p	java:S116"TRename this field "btn_atras" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ÈŸæ8†Í§ …/
-X	java:S110"<This class has 9 parents which is greater than 5 authorized.(Á‰Ö÷8·› …/
-K
-java:S37400"/Provide the parametrized type for this generic.(¤èv8ïŸÌ …/
-r
-java:S1450"URemove the "miband" field and declare it as a local variable in the relevant methods.( Í„ı8¥±˜Ş…/
