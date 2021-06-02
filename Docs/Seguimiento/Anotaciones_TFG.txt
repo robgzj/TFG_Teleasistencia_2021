@@ -123,3 +123,12 @@ Pasar datos a enviar por TS de String a sus respectivos tipos de datos
 
 Falta por solucionar:
 Como parar los handler(parar envio de datos y calculo de pulsaciones)
+
+
+Semana 11:
+
+Se intento duramente implementar el sistema de verificación de monitorización en un solo canal, pero fue imposible ya que en cada envio de mensaje solo se mandaban las variables deseadas, es decir que cuando se mandaba la confirmacion sola, los otros campos se e ponian a null, y esto creaba un caos en el Thingspeak.
+
+App casi terminada
+
+DUDA: Funcionamiento en segundo plano, los sensores dejan de funcionar

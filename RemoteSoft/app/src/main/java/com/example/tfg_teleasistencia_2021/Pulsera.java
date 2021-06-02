@@ -13,25 +13,34 @@ import com.zhaoxiaodan.miband.model.UserInfo;
 
 public class Pulsera {
 
-    protected MiBand miBand;
-    protected BluetoothDevice device;
+    private MiBand miBand;
+    private BluetoothDevice device;
+    private Handler handler=new Handler();;
+    private Runnable myRunnable= new Runnable() {
+        public void run() {
+            miBand.startHeartRateScan();
+            handler.postDelayed(this, 14000);
+        }
+    };
+    private boolean isConnected;
+    private ProgressDialog pd;
 
     public Pulsera(MiBand miBand, BluetoothDevice device) {
         this.miBand = miBand;
         this.device = device;
-
     }
 
     public void conectar_dispositivo(Context ctx) {
-        final ProgressDialog pd = ProgressDialog.show(ctx, "", "Conectando al dispositivo ...");
+        pd = ProgressDialog.show(ctx, "", "Conectando al dispositivo ...");
         miBand.connect(device, new ActionCallback() {
 
             @Override
             public void onSuccess(Object data) {
-                pd.dismiss();
+
                 UserInfo userInfo = new UserInfo(20271234, 1, 32, 180, 80, "Usuario", 0);
                 miBand.setUserInfo(userInfo);
-
+                isConnected=true;
+                pd.dismiss();
 
                 miBand.setDisconnectedListener(new NotifyListener() {
                     @Override
@@ -48,25 +57,21 @@ public class Pulsera {
         });
     }
 
-    public void conectar_y_calcularPulsaciones(Context ctx, HeartRateNotifyListener mHealthListener) {
-        conectar_dispositivo(ctx);
+    public void calcular_pulsaciones(Context ctx, HeartRateNotifyListener mHealthListener) {
+        if(!isConnected){
+            conectar_dispositivo(ctx);
+        }
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 miBand.setHeartRateScanListener(mHealthListener);
-                calcular_pulsaciones();
+                handler.postDelayed(myRunnable,1000);
             }
         }, 1000);
+
     }
 
-
-    private void calcular_pulsaciones() {
-        final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            public void run() {
-                miBand.startHeartRateScan();
-                handler.postDelayed(this, 14000);
-            }
-        }, 14000);
+    public void stopCalcularPulsaciones(){
+        handler.removeCallbacks(myRunnable);
     }
 
 }

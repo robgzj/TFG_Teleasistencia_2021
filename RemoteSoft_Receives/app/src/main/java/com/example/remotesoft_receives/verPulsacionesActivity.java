@@ -20,19 +20,19 @@ import org.json.JSONObject;
 
 public class verPulsacionesActivity extends AppCompatActivity {
 
-    protected Button btn_atras;
-    protected TextView valorPulsaciones;
-    protected int pulsaciones;
+    private Button btn_atras;
+    private TextView valorPulsaciones;
+    private int pulsaciones;
 
     //MQTT
-    protected MqttAndroidClient client;
-    protected String username;
-    protected String MQTT_API_Key;
-    protected String channelID;
-    protected String READ_API_KEY;
+    private MqttAndroidClient client;
+    private String username;
+    private String MQTT_API_Key;
+    private String channelID;
+    private String READ_API_KEY;
 
-    protected String textoJSON;
-    protected JSONObject jsonObject;
+    private String textoJSON;
+    private JSONObject jsonObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class AcercaDeActivity extends AppCompatActivity {
 
-    protected Button btn_atras;
+    private Button btn_atras;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

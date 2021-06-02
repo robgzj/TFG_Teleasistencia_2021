@@ -14,11 +14,11 @@ import com.zhaoxiaodan.miband.MiBand;
 
 public class AcercaDeActivity extends AppCompatActivity {
 
-    protected Button btn_atras;
-    protected MiBand miBand;
-    protected BluetoothDevice device;
-    protected Pulsera pulsera;
-    protected TextView conectado_a;
+    private Button btn_atras;
+    private MiBand miBand;
+    private BluetoothDevice device;
+    private Pulsera pulsera;
+    private TextView conectado_a;
 
 
     @Override
@@ -37,6 +37,7 @@ public class AcercaDeActivity extends AppCompatActivity {
         pulsera = new Pulsera(miBand, device);
 
         if (device != null) {
+            pulsera.conectar_dispositivo(this);
             conectado_a.setText("Conectado a: " + device.getName());
         }
 

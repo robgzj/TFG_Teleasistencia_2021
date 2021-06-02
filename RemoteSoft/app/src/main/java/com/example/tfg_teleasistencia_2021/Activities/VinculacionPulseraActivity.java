@@ -24,13 +24,13 @@ import java.util.HashMap;
 
 public class VinculacionPulseraActivity extends AppCompatActivity {
 
-    protected Button btn_atras;
-    protected ListView listaDispositivos;
-    protected Switch switch_scan;
-    protected MiBand miband;
-    protected ScanCallback scanCallback;
+    private Button btn_atras;
+    private ListView listaDispositivos;
+    private Switch switch_scan;
+    private MiBand miband;
+    private ScanCallback scanCallback;
 
-    protected HashMap<String, BluetoothDevice> devices = new HashMap<>();
+    private HashMap<String, BluetoothDevice> devices = new HashMap<>();
 
 
     @Override

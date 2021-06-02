@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,26 +36,55 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
-    protected Button btn_acercaDe, btn_configTS;
-    protected Switch switchB;
+    private Button btn_acercaDe, btn_configTS;
+    private Switch switchB;
 
-    protected Button btn_pulsaciones, btn_ubicacion, btn_acelerometro;
-    protected SharedPreferences.Editor editor;
-    protected SharedPreferences sharedPreferences;
+    private Button btn_pulsaciones, btn_ubicacion, btn_acelerometro;
+    private SharedPreferences.Editor editor;
+    private SharedPreferences sharedPreferences;
     //MQTT
-    protected MqttAndroidClient client;
-    protected String username;
-    protected String MQTT_API_Key;
-    protected String channelID;
-    protected String READ_API_KEY;
+    private MqttAndroidClient client;
+    private String username;
+    private String MQTT_API_Key;
+    private String channelID;
+    private String READ_API_KEY;
 
-    protected String textoJSON;
-    protected JSONObject jsonObject;
+    private MqttAndroidClient clientConf;
+    private String channelID_Conf;
+    private String WRITE_API_KEY_Conf;
 
-    protected double latitud, longitud;
-    protected int pulsaciones;
-    protected double cor_x, cor_y, cor_z;
-    protected boolean hayCaida;
+    private String textoJSON;
+    private JSONObject jsonObject;
+
+    private double latitud, longitud;
+    private String pulsaciones, caida;
+    private double cor_x, cor_y, cor_z;
+    private boolean hayCaida;
+
+
+    private Handler handlerPublish = new Handler();
+
+    private Runnable runnablePublish= new Runnable() {
+        public void run() {
+            try {
+                clientConf.publish("channels/" + channelID_Conf + "/publish/fields/field1/" + WRITE_API_KEY_Conf, ("1").getBytes(), 0, false);
+            } catch (MqttException e) {
+                Toast.makeText(MainActivity.this, "No se ha enviado la informacion", Toast.LENGTH_SHORT).show();
+            }
+            handlerPublish.postDelayed(this, 15000);
+        }
+    };
+
+    private Runnable runnableStopMonitorizacion= new Runnable() {
+        public void run() {
+            try {
+                clientConf.publish("channels/" + channelID_Conf + "/publish/fields/field1/" + WRITE_API_KEY_Conf, ("0").getBytes(), 0, false);
+
+            } catch (MqttException e) {
+                Toast.makeText(MainActivity.this, "No se ha enviado la informacion", Toast.LENGTH_SHORT).show();
+            }
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (switchB.isChecked()) {
+                    handlerPublish.removeCallbacks(runnableStopMonitorizacion);
                     switchActivado();
                 } else {
                     editor = getSharedPreferences("save", MODE_PRIVATE).edit();
@@ -95,6 +126,14 @@ public class MainActivity extends AppCompatActivity {
                     btn_pulsaciones.setVisibility(View.INVISIBLE);
                     btn_ubicacion.setVisibility(View.INVISIBLE);
                     btn_acelerometro.setVisibility(View.INVISIBLE);
+                    handlerPublish.removeCallbacks(runnablePublish);
+
+                    handlerPublish.postDelayed(runnableStopMonitorizacion,15000);
+                    try {
+                        client.unsubscribe("channels/" + channelID + "/subscribe/json/" + READ_API_KEY);
+                    } catch (MqttException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
@@ -109,6 +148,16 @@ public class MainActivity extends AppCompatActivity {
             btn_pulsaciones.setVisibility(View.INVISIBLE);
             btn_ubicacion.setVisibility(View.INVISIBLE);
             btn_acelerometro.setVisibility(View.INVISIBLE);
+            handlerPublish.removeCallbacks(runnablePublish);
+
+            handlerPublish.postDelayed(runnableStopMonitorizacion,15000);
+
+            try {
+                client.unsubscribe("channels/" + channelID + "/subscribe/json/" + READ_API_KEY);
+            } catch (MqttException e) {
+                e.printStackTrace();
+            }
+
         }
 
     }
@@ -116,9 +165,9 @@ public class MainActivity extends AppCompatActivity {
     public void showNotification(Context context, String title, String message, Intent intent, int reqCode) {
 
         PendingIntent pendingIntent = PendingIntent.getActivity(context, reqCode, intent, PendingIntent.FLAG_ONE_SHOT);
-        String CHANNEL_ID = "channel_name";// The id of the channel.
+        String CHANNEL_ID = "RS-Channel";
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.mipmap.logo_app_round)
+                .setSmallIcon(R.color.design_default_color_error)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setAutoCancel(true)
@@ -126,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
                 .setContentIntent(pendingIntent);
         NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "Channel Name";// The user-visible name of the channel.
+            CharSequence name = "RS-Channel";// The user-visible name of the channel.
             int importance = NotificationManager.IMPORTANCE_HIGH;
             NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, name, importance);
             notificationManager.createNotificationChannel(mChannel);
@@ -185,17 +234,21 @@ public class MainActivity extends AppCompatActivity {
             btn_acelerometro.setVisibility(View.VISIBLE);
 
             channelID = sharedPreferences.getString("canal", "");
-            READ_API_KEY = sharedPreferences.getString("readKEY", "");
-            ;
+            READ_API_KEY = sharedPreferences.getString("readKey", "");
             MQTT_API_Key = sharedPreferences.getString("MQTTKey", "");
             username = sharedPreferences.getString("username", "");
-            ;
 
-            if (channelID.equals("") || READ_API_KEY.equals("") || MQTT_API_Key.equals("") || username.equals("")) {
+            channelID_Conf = sharedPreferences.getString("canalConf", "");
+            WRITE_API_KEY_Conf = sharedPreferences.getString("writeKeyConf", "");
+
+            if (channelID.equals("")  || MQTT_API_Key.equals("") || username.equals("") ||  READ_API_KEY.equals("")|| channelID_Conf.equals("") || WRITE_API_KEY_Conf.equals("")) {
                 channelID = "1362377";
-                READ_API_KEY = "XU2DIK5NBQDQP1ME";
                 MQTT_API_Key = "OXEBXSCYAENX76QW";
                 username = "mwa0000022240279";
+                READ_API_KEY = "Q38TDPXSWT30IT7T";
+
+                WRITE_API_KEY_Conf = "889R8GB3XCUUCH1Z";
+                channelID_Conf = "1402766";
             }
 
             String clientId = MqttClient.generateClientId();
@@ -212,7 +265,6 @@ public class MainActivity extends AppCompatActivity {
                     // We are connected
                     try {
                         client.subscribe("channels/" + channelID + "/subscribe/json/" + READ_API_KEY, 0);
-
                         client.setCallback(new MqttCallback() {
                             @Override
                             public void connectionLost(Throwable cause) {
@@ -221,39 +273,57 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                                textoJSON = new String(message.getPayload());
-                                //Aqui hacer el parseo
-                                jsonObject = new JSONObject(textoJSON);
-                                pulsaciones = jsonObject.getInt("field1");
+                                    textoJSON = new String(message.getPayload());
+                                    //Aqui hacer el parseo
+                                    jsonObject = new JSONObject(textoJSON);
+                                    pulsaciones = jsonObject.getString("field1");
 
-                                cor_x = jsonObject.getDouble("field2");
-                                cor_y = jsonObject.getDouble("field3");
-                                cor_z = jsonObject.getDouble("field4");
+                                    cor_x = jsonObject.getDouble("field2");
+                                    cor_y = jsonObject.getDouble("field3");
+                                    cor_z = jsonObject.getDouble("field4");
 
-                                latitud = jsonObject.getDouble("field5");
-                                longitud = jsonObject.getDouble("field6");
+                                    latitud = jsonObject.getDouble("field5");
+                                    longitud = jsonObject.getDouble("field6");
 
-                                if(jsonObject.getString("field7").equals("1")){
-                                    hayCaida=true;
-                                }else{
-                                    hayCaida=false;
-                                }
+                                    caida = jsonObject.getString("field7");
 
-                                //Toast.makeText(MainActivity.this, pulsaciones + cor_x+ cor_y + cor_z + latitud + longitud, Toast.LENGTH_LONG).show();
+                                    if (caida.equals("1")) {
+                                        hayCaida = true;
+                                    } else {
+                                        hayCaida = false;
+                                    }
 
-                                if (pulsaciones >= 100) {
-                                    showNotification(MainActivity.this, "ALARMA", "Pulsaciones igual o superior a 100 LPM", new Intent(), 0);
-                                }
+                                    if (Integer.valueOf(pulsaciones) >= 100) {
+                                        showNotification(MainActivity.this, "ALARMA", "Pulsaciones igual o superior a 100 LPM", new Intent(), 0);
+                                    }
 
-                                if(hayCaida){
-                                    showNotification(MainActivity.this, "ALARMA", "Caída detectada", new Intent(), 1);
-                                }
+                                    if (hayCaida) {
+                                        showNotification(MainActivity.this, "ALARMA", "Caída detectada", new Intent(), 1);
+                                    }
+
 
                             }
 
                             @Override
                             public void deliveryComplete(IMqttDeliveryToken token) {
 
+                            }
+                        });
+
+                        String clientId_Conf = MqttClient.generateClientId();
+                        clientConf = new MqttAndroidClient(MainActivity.this.getApplicationContext(), "tcp://mqtt.thingspeak.com:1883", clientId_Conf);
+                        IMqttToken tokenConf = clientConf.connect();
+                        tokenConf.setActionCallback(new IMqttActionListener() {
+                            @Override
+                            public void onSuccess(IMqttToken asyncActionToken) {
+                                // We are connected
+                                handlerPublish.postDelayed(runnablePublish, 0);
+                            }
+
+                            @Override
+                            public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+                                // Something went wrong e.g. connection timeout or firewall problems
+                                Toast.makeText(MainActivity.this, "Error de conexion a TS", Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -287,33 +357,41 @@ public class MainActivity extends AppCompatActivity {
         username_Box.setHint("Username");
         layout.addView(username_Box);
 
-        final EditText MQTT_API_Key_Box = new EditText(this);
-        MQTT_API_Key_Box.setHint("MQTT_API_KEY");
-        layout.addView(MQTT_API_Key_Box);
-
         final EditText channelID_Box = new EditText(this);
         channelID_Box.setHint("Channel ID");
         layout.addView(channelID_Box);
+
+        final EditText MQTT_API_Key_Box = new EditText(this);
+        MQTT_API_Key_Box.setHint("MQTT_API_KEY");
+        layout.addView(MQTT_API_Key_Box);
 
         final EditText READ_API_KEY_Box = new EditText(this);
         READ_API_KEY_Box.setHint("READ_API_KEY");
         layout.addView(READ_API_KEY_Box);
 
+
+        final EditText channelID_Conf_Box = new EditText(this);
+        channelID_Conf_Box.setHint("Channel ID Confirmación");
+        layout.addView(channelID_Conf_Box);
+
+
+        final EditText WRITE_API_KEY_Conf_Box = new EditText(this);
+        WRITE_API_KEY_Conf_Box.setHint("WRITE_API_KEY Confirmación");
+        layout.addView(WRITE_API_KEY_Conf_Box);
+
         builder.setView(layout);
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                username = username_Box.getText().toString();
-                MQTT_API_Key = MQTT_API_Key_Box.getText().toString();
-                channelID = channelID_Box.getText().toString();
-                READ_API_KEY = READ_API_KEY_Box.getText().toString();
-
-
                 editor = getSharedPreferences("save", MODE_PRIVATE).edit();
                 editor.putString("canal", channelID_Box.getText().toString());
-                editor.putString("readKEY", READ_API_KEY_Box.getText().toString());
+                editor.putString("readKey", READ_API_KEY_Box.getText().toString());
                 editor.putString("MQTTKey", MQTT_API_Key_Box.getText().toString());
                 editor.putString("username", username_Box.getText().toString());
+
+                editor.putString("canalConf", channelID_Conf_Box.getText().toString());
+                editor.putString("writeKeyConf", WRITE_API_KEY_Conf_Box.getText().toString());
+
                 editor.apply();
                 switchB.setChecked(false);
             }

@@ -5,12 +5,12 @@ import java.util.LinkedList;
 
 public class Window {
 
-    protected final int TAMANHO_DEFAULT = 10;
-    protected final double UMBRAL = 8;
+    private final int TAMANHO_DEFAULT = 10;
+    private final double UMBRAL = 10;
 
-    protected final int TAMANHO;
+    private final int TAMANHO;
 
-    protected LinkedList<Double> valores;
+    private LinkedList<Double> valores;
 
     public Window() {
         TAMANHO = TAMANHO_DEFAULT;

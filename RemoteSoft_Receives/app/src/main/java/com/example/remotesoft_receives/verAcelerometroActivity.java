@@ -20,20 +20,19 @@ import org.json.JSONObject;
 
 public class verAcelerometroActivity extends AppCompatActivity {
 
-    protected Button btn_atras;
-    protected TextView valor_cor_x, valor_cor_y, valor_cor_z, valor_hayCaida;
-    protected double cor_x, cor_y, cor_z;
-    protected boolean hayCaida;
+    private Button btn_atras;
+    private TextView valor_cor_x, valor_cor_y, valor_cor_z, valor_hayCaida;
+    private double cor_x, cor_y, cor_z;
 
     //MQTT
-    protected MqttAndroidClient client;
-    protected String username;
-    protected String MQTT_API_Key;
-    protected String channelID;
-    protected String READ_API_KEY;
+    private MqttAndroidClient client;
+    private String username;
+    private String MQTT_API_Key;
+    private String channelID;
+    private String READ_API_KEY;
 
-    protected String textoJSON;
-    protected JSONObject jsonObject;
+    private String textoJSON;
+    private JSONObject jsonObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

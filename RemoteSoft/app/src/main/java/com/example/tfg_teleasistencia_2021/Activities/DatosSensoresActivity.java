@@ -29,23 +29,23 @@ import com.zhaoxiaodan.miband.listeners.HeartRateNotifyListener;
 
 public class DatosSensoresActivity extends AppCompatActivity {
 
-    protected Button btn_atras;
-    protected TextView txtUbi, txtAcelerometro, txtPulsaciones;
-    protected Sensor acelerometro;
-    protected static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
-    protected LocationManager mLocationManager;
-    protected SensorManager mSensorManager;
-    protected TextView conectado_a;
-    protected Pulsera pulsera;
+    private Button btn_atras;
+    private TextView txtUbi, txtAcelerometro, txtPulsaciones;
+    private Sensor acelerometro;
+    private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
+    private LocationManager mLocationManager;
+    private SensorManager mSensorManager;
+    private TextView conectado_a;
+    private Pulsera pulsera;
 
-    protected BluetoothDevice device;
-    protected MiBand miBand;
+    private BluetoothDevice device;
+    private MiBand miBand;
 
-    protected TextView hayCaida;
-    protected double ac;
-    protected Window ventana;
+    private TextView hayCaida;
+    private double ac;
+    private Window ventana;
 
-    protected LocationListener mLocationListener = new LocationListener() {
+    private LocationListener mLocationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
             txtUbi.setText(String.format("Latitud: %s\nLongitud: %s", location.getLatitude(), location.getLongitude()));
@@ -54,7 +54,7 @@ public class DatosSensoresActivity extends AppCompatActivity {
         }
     };
 
-    protected SensorEventListener mSensorListener = new SensorEventListener() {
+    private SensorEventListener mSensorListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
             txtAcelerometro.setText(String.format("X: %s\nY: %s\nZ: %s", event.values[0], event.values[1], event.values[2]));
@@ -77,7 +77,7 @@ public class DatosSensoresActivity extends AppCompatActivity {
         }
     };
 
-    protected HeartRateNotifyListener mHealthListener = new HeartRateNotifyListener() {
+    private HeartRateNotifyListener mHealthListener = new HeartRateNotifyListener() {
         @Override
         public void onNotify(int heartRate) {
             txtPulsaciones.setText(heartRate + " LPM");
@@ -106,8 +106,9 @@ public class DatosSensoresActivity extends AppCompatActivity {
         pulsera = new Pulsera(miBand, device);
 
         if (device != null) {
-            pulsera.conectar_y_calcularPulsaciones(this, mHealthListener);
+            pulsera.conectar_dispositivo(this);
             conectado_a.setText("Conectado a: " + device.getName());
+            pulsera.calcular_pulsaciones(this, mHealthListener);
         }
         ventana = new Window(10);
         getAccelerometerValues();
@@ -118,6 +119,7 @@ public class DatosSensoresActivity extends AppCompatActivity {
         } else {
             getCurrentLocation();
         }
+
 
 
     }
@@ -151,6 +153,7 @@ public class DatosSensoresActivity extends AppCompatActivity {
     }
 
     public void openMainActivity() {
+        pulsera.stopCalcularPulsaciones();
         super.onBackPressed();
         this.finish();
     }

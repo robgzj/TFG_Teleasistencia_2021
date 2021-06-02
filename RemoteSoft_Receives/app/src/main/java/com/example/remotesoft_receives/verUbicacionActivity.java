@@ -26,18 +26,18 @@ import org.json.JSONObject;
 
 public class verUbicacionActivity extends  AppCompatActivity implements OnMapReadyCallback {
 
-    protected Button btn_atras;
-    protected double latitud=0;
-    protected double longitud=0;
+    private Button btn_atras;
+    private double latitud=0;
+    private double longitud=0;
     //MQTT
-    protected MqttAndroidClient client;
-    protected String username;
-    protected String MQTT_API_Key;
-    protected String channelID;
-    protected String READ_API_KEY;
+    private MqttAndroidClient client;
+    private String username;
+    private String MQTT_API_Key;
+    private String channelID;
+    private String READ_API_KEY;
 
-    protected String textoJSON;
-    protected JSONObject jsonObject;
+    private String textoJSON;
+    private JSONObject jsonObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
