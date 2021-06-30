@@ -1,76 +1,76 @@
 
-e
-java:S1192Ì"GDefine a constant instead of duplicating this literal "device" 3 times.(üýé‹8ð‡ÀŠ˜/
-Q	java:S1103"<This class has 9 parents which is greater than 5 authorized.(²Ú±Ž
-K
-java:S1604é"(Make this anonymous inner class a lambda(àâ ýÿÿÿÿ8ð‡ÀŠ˜/
-u
-java:S3252Û"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí8ð‡ÀŠ˜/
-u
-java:S3252Û"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí8ð‡ÀŠ˜/
-K
-java:S1604ã"(Make this anonymous inner class a lambda(»ÐÃ©ûÿÿÿÿ8ð‡ÀŠ˜/
-i
-java:S1192·"FDefine a constant instead of duplicating this literal "value" 4 times.(¯×ë§þÿÿÿÿ8ð‡ÀŠ˜/
-s	java:S117Ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃŸüŸûÿÿÿÿ8ð‡ÀŠ˜/
-p	java:S1168"VRename this field "conectado_a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È°Îþøÿÿÿÿ
-o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯·‹”
-K
-java:S1604Ö"(Make this anonymous inner class a lambda(Ë—€Æþÿÿÿÿ8ð‡ÀŠ˜/
-Ÿ
-java:S1186›"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÐŠß±8ð‡ÀŠ˜/
-n	java:S117¿"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Èÿ­¼8ð‡ÀŠ˜/
-l
-java:S1192s"JDefine a constant instead of duplicating this literal "channels/" 3 times.(ÖÐßÔúÿÿÿÿ8¼ÉÔ¥/
-s	java:S117ü"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑìãŸùÿÿÿÿ8¼ÉÔ¥/
+t
+java:S1450Z"WRemove the "username" field and declare it as a local variable in the relevant methods.(‘ó¹²8¼ÉÔ¥/
+u	java:S116a"YRename this field "channelID_Conf" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Ô£8¼ÉÔ¥/
 n	java:S117ƒ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çù²8¼ÉÔ¥/
-n	java:S117º"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìß±æ8¼ÉÔ¥/
-s	java:S117Ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô„ÙËúÿÿÿÿ8¼ÉÔ¥/
-n	java:S117Ì"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ê€ï±8¼ÉÔ¥/
-s	java:S117Ð"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤Ò“Žûÿÿÿÿ8¼ÉÔ¥/
-E
-java:S1604"(Make this anonymous inner class a lambda(¿î³Ÿ8¼ÉÔ¥/
 K
 java:S1604¡"(Make this anonymous inner class a lambda(ÌÊ–Ûÿÿÿÿÿ8¼ÉÔ¥/
+Q
+java:S1874m"/Remove this use of "Handler"; it is deprecated.(Ž¢Ï¦ûÿÿÿÿ8¼ÉÔ¥/
+K
+java:S1604Ö"(Make this anonymous inner class a lambda(Ë—€Æþÿÿÿÿ8ð‡ÀŠ˜/
 }
 java:S1450`"[Remove the "MQTT_API_Key" field and declare it as a local variable in the relevant methods.(§Ðêýÿÿÿÿ8¼ÉÔ¥/
-}
-java:S1450R"[Remove the "acelerometro" field and declare it as a local variable in the relevant methods.(Ççàôüÿÿÿÿ8¼ÉÔ¥/
-}
-java:S14506"[Remove the "btn_acercaDe" field and declare it as a local variable in the relevant methods.(•¾êüÿÿÿÿ8¼ÉÔ¥/
-}
-java:S14506"[Remove the "btn_configTS" field and declare it as a local variable in the relevant methods.(•¾êüÿÿÿÿ8¼ÉÔ¥/
+Ÿ
+java:S1186›"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÐŠß±8ð‡ÀŠ˜/
+u
+java:S3252Û"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí8ð‡ÀŠ˜/
+K
+java:S1604é"(Make this anonymous inner class a lambda(àâ ýÿÿÿÿ8ð‡ÀŠ˜/
+t	java:S116\"XRename this field "WRITE_API_KEY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÞ¢Ÿ8¼ÉÔ¥/
+s	java:S117Ã"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ô„ÙËúÿÿÿÿ8¼ÉÔ¥/
 ‚
 java:S14506"`Remove the "btn_datosSensores" field and declare it as a local variable in the relevant methods.(•¾êüÿÿÿÿ8¼ÉÔ¥/
 €
 java:S14506"^Remove the "btn_vinculacion" field and declare it as a local variable in the relevant methods.(•¾êüÿÿÿÿ8¼ÉÔ¥/
-
-java:S1450V"_Remove the "mLocationManager" field and declare it as a local variable in the relevant methods.(»¨¨µÿÿÿÿÿ8¼ÉÔ¥/
 
 java:S1450Q"]Remove the "mSensorManager" field and declare it as a local variable in the relevant methods.(Ü†‚µùÿÿÿÿ8¼ÉÔ¥/
 r
 java:S1450H"URemove the "miBand" field and declare it as a local variable in the relevant methods.(ÛƒŸ›8¼ÉÔ¥/
-t
-java:S1450Z"WRemove the "username" field and declare it as a local variable in the relevant methods.(‘ó¹²8¼ÉÔ¥/
-Q
-java:S16596"/Declare "btn_datosSensores" on a separate line.(•¾êüÿÿÿÿ8¼ÉÔ¥/
-O
-java:S16596"-Declare "btn_vinculacion" on a separate line.(•¾êüÿÿÿÿ8¼ÉÔ¥/
-L
-java:S16596"*Declare "btn_configTS" on a separate line.(•¾êüÿÿÿÿ8¼ÉÔ¥/
-x	java:S1166"WRename this field "btn_acercaDe" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¾êüÿÿÿÿ8¼ÉÔ¥/
-}	java:S1166"\Rename this field "btn_datosSensores" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¾êüÿÿÿÿ8¼ÉÔ¥/
-{	java:S1166"ZRename this field "btn_vinculacion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¾êüÿÿÿÿ8¼ÉÔ¥/
-x	java:S1166"WRename this field "btn_configTS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¾êüÿÿÿÿ8¼ÉÔ¥/
-t	java:S116\"XRename this field "WRITE_API_KEY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µÞ¢Ÿ8¼ÉÔ¥/
-x	java:S116`"WRename this field "MQTT_API_Key" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§Ðêýÿÿÿÿ8¼ÉÔ¥/
-u	java:S116a"YRename this field "channelID_Conf" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©Ô£8¼ÉÔ¥/
 }	java:S116b"\Rename this field "READ_API_KEY_Conf" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ýñ°Èýÿÿÿÿ8¼ÉÔ¥/
-Q
-java:S1874m"/Remove this use of "Handler"; it is deprecated.(Ž¢Ï¦ûÿÿÿÿ8¼ÉÔ¥/
-u
-java:S3776±"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ž¨Œþÿÿÿÿ8¼ÉÔ¥/
-Ÿ
-java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¯ô¢8¼ÉÔ¥/
+n	java:S117º"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìß±æ8¼ÉÔ¥/
+{	java:S1166"ZRename this field "btn_vinculacion" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¾êüÿÿÿÿ8¼ÉÔ¥/
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯·‹”
 Ÿ
 java:S1186œ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(£Óˆõ8¼ÉÔ¥/
+}
+java:S14506"[Remove the "btn_acercaDe" field and declare it as a local variable in the relevant methods.(•¾êüÿÿÿÿ8¼ÉÔ¥/
+i
+java:S1192·"FDefine a constant instead of duplicating this literal "value" 4 times.(¯×ë§þÿÿÿÿ8ð‡ÀŠ˜/
+}
+java:S1450R"[Remove the "acelerometro" field and declare it as a local variable in the relevant methods.(Ççàôüÿÿÿÿ8¼ÉÔ¥/
+p	java:S1168"VRename this field "conectado_a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È°Îþøÿÿÿÿ
+s	java:S117Ç"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃŸüŸûÿÿÿÿ8ð‡ÀŠ˜/
+n	java:S117¿"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Èÿ­¼8ð‡ÀŠ˜/
+K
+java:S1604ã"(Make this anonymous inner class a lambda(»ÐÃ©ûÿÿÿÿ8ð‡ÀŠ˜/
+E
+java:S1604"(Make this anonymous inner class a lambda(¿î³Ÿ8¼ÉÔ¥/
+
+java:S1450V"_Remove the "mLocationManager" field and declare it as a local variable in the relevant methods.(»¨¨µÿÿÿÿÿ8¼ÉÔ¥/
+l
+java:S1192s"JDefine a constant instead of duplicating this literal "channels/" 3 times.(ÖÐßÔúÿÿÿÿ8¼ÉÔ¥/
+u
+java:S3776±"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ž¨Œþÿÿÿÿ8¼ÉÔ¥/
+s	java:S117ü"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑìãŸùÿÿÿÿ8¼ÉÔ¥/
+x	java:S1166"WRename this field "btn_configTS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¾êüÿÿÿÿ8¼ÉÔ¥/
+n	java:S117Ì"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ê€ï±8¼ÉÔ¥/
+s	java:S117Ð"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤Ò“Žûÿÿÿÿ8¼ÉÔ¥/
+L
+java:S16596"*Declare "btn_configTS" on a separate line.(•¾êüÿÿÿÿ8¼ÉÔ¥/
+u
+java:S3252Û"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí8ð‡ÀŠ˜/
+O
+java:S16596"-Declare "btn_vinculacion" on a separate line.(•¾êüÿÿÿÿ8¼ÉÔ¥/
+x	java:S116`"WRename this field "MQTT_API_Key" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§Ðêýÿÿÿÿ8¼ÉÔ¥/
+e
+java:S1192Ì"GDefine a constant instead of duplicating this literal "device" 3 times.(üýé‹8ð‡ÀŠ˜/
+Ÿ
+java:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¯ô¢8¼ÉÔ¥/
+Q
+java:S16596"/Declare "btn_datosSensores" on a separate line.(•¾êüÿÿÿÿ8¼ÉÔ¥/
+Q	java:S1103"<This class has 9 parents which is greater than 5 authorized.(²Ú±Ž
+x	java:S1166"WRename this field "btn_acercaDe" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¾êüÿÿÿÿ8¼ÉÔ¥/
+}
+java:S14506"[Remove the "btn_configTS" field and declare it as a local variable in the relevant methods.(•¾êüÿÿÿÿ8¼ÉÔ¥/
+}	java:S1166"\Rename this field "btn_datosSensores" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•¾êüÿÿÿÿ8¼ÉÔ¥/

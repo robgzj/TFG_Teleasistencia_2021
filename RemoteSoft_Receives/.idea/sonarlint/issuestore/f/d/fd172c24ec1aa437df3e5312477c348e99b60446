@@ -1,0 +1,18 @@
+
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(õç¹¡ÿÿÿÿÿ
+v
+java:S1450 "[Remove the "MQTT_API_Key" field and declare it as a local variable in the relevant methods.(§Ğêıÿÿÿÿ
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(õç¹¡ÿÿÿÿÿ
+—
+java:S1186H"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¯ô¢
+q	java:S116 "WRename this field "MQTT_API_Key" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§Ğêıÿÿÿÿ
+h	java:S116"TRename this field "btn_atras" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûá†w
+—
+java:S1186d"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(›¬È 
+m
+java:S1450"WRemove the "username" field and declare it as a local variable in the relevant methods.(‘ó¹²
+q	java:S116""WRename this field "READ_API_KEY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥åõéüÿÿÿÿ
+—
+java:S1186X"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(£Óˆõ
+m
+java:S1450"XRemove the "btn_atras" field and declare it as a local variable in the relevant methods.(Ûá†w

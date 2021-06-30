@@ -1,0 +1,15 @@
+
+V	java:S110"<This class has 9 parents which is greater than 5 authorized.(øÌ¨íûÿÿÿÿ
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯·‹”
+m
+java:S1450"XRemove the "btn_atras" field and declare it as a local variable in the relevant methods.(Ûá†w
+u
+java:S1450"ZRemove the "conectado_a" field and declare it as a local variable in the relevant methods.(È°Îşøÿÿÿÿ
+k
+java:S1450"URemove the "device" field and declare it as a local variable in the relevant methods.(ø˜½º
+k
+java:S1450"URemove the "miBand" field and declare it as a local variable in the relevant methods.(ÛƒŸ›
+l
+java:S1450"VRemove the "pulsera" field and declare it as a local variable in the relevant methods.(ãÖæÔ
+h	java:S116"TRename this field "btn_atras" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûá†w
+p	java:S116"VRename this field "conectado_a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È°Îşøÿÿÿÿ

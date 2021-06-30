@@ -1,0 +1,17 @@
+
+J
+java:S3740/"/Provide the parametrized type for this generic.(®ãëøÿÿÿÿ
+C
+java:S1604P"(Make this anonymous inner class a lambda(¥Ò­´üÿÿÿÿ
+k	java:S116"VRename this field "switch_scan" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡ù“«
+h	java:S116"TRename this field "btn_atras" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûá†w
+Q	java:S110"<This class has 9 parents which is greater than 5 authorized.(åÕƒÖ
+{
+java:S1450"`Remove the "listaDispositivos" field and declare it as a local variable in the relevant methods.(ûÎ¾×ıÿÿÿÿ
+m
+java:S1450"XRemove the "btn_atras" field and declare it as a local variable in the relevant methods.(Ûá†w
+C
+java:S1604?"(Make this anonymous inner class a lambda(Œæëüÿÿÿÿ
+p
+java:S1450"ZRemove the "switch_scan" field and declare it as a local variable in the relevant methods.(‡ù“«
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯·‹”

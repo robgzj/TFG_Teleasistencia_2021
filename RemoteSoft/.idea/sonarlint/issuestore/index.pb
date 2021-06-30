@@ -21,3 +21,9 @@ Bapp/src/main/java/com/example/tfg_teleasistencia_2021/Pulsera.java,9\8\981a522
 Rapp/src/main/java/com/example/tfg_teleasistencia_2021/Activities/MainActivity.java,5\b\5bb36fb056c2eb6e7aa4470d7e241f41e715e3b1
 ã
 [app/src/main/java/com/example/tfg_teleasistencia_2021/Activities/DatosSensoresActivity.java,3\a\3af596267c0034400d55231dc657010521f15046
+Ü
+Vapp/src/main/java/com/example/tfg_teleasistencia_2021/Activities/AcercaDeActivity.java,6\4\64cd81cb03d8c6de6d036aad1d06e16ad4454b4c
+w
+Gapp/src/main/java/com/example/tfg_teleasistencia_2021/DetectaCaida.java,a\c\ac48f9ed963af50c2889232be18cab8f2766105c
+ê
+`app/src/main/java/com/example/tfg_teleasistencia_2021/Activities/VinculacionPulseraActivity.java,0\8\08a2c79f8c86e4a90f1e71ae100af9d061904995

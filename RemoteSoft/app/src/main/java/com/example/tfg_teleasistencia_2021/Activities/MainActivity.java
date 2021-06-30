@@ -310,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
         intent.setClass(this, DatosSensoresActivity.class);
         this.startActivity(intent);
     }
-
+    //Se desconecta la pulsera finalizando la actividad
     public void openVinculacionctivity() {
         if(device !=null){
             pulsera.stopCalcularPulsaciones();

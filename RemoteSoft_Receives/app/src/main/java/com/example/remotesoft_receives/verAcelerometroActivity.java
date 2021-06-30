@@ -45,6 +45,7 @@ public class verAcelerometroActivity extends AppCompatActivity {
         btn_atras = findViewById(R.id.boton_atras);
         btn_atras.setOnClickListener(v -> openMainActivity());
 
+        //Obtenemos de la vista principal el canal de la persona a la que se supervisa
         Intent intent = getIntent();
         channelID=intent.getExtras().getString("channelID");
         READ_API_KEY=intent.getExtras().getString("READ_API_KEY");
@@ -57,6 +58,7 @@ public class verAcelerometroActivity extends AppCompatActivity {
         valor_cor_z = findViewById(R.id.datos_cor_z);
         valor_hayCaida = findViewById(R.id.datos_caida);
 
+        //Nos suscribimos a ese canal
         try {
         String clientId = MqttClient.generateClientId();
         client = new MqttAndroidClient(verAcelerometroActivity.this.getApplicationContext(), "tcp://mqtt.thingspeak.com:1883", clientId);

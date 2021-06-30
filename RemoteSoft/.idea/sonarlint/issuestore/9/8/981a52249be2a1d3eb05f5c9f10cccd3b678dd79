@@ -1,19 +1,19 @@
 
-—
-java:S11869"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ş¨èº
-I
-java:S1874(",Remove this use of "show"; it is deprecated.(’µ©Ä8ÀÉÔ¥/
 >
 java:S1604K"(Make this anonymous inner class a lambda(„ÑñŒ
-L
-java:S1874"/Remove this use of "Handler"; it is deprecated.(ïóî‘8ÀÉÔ¥/
-h	java:S100'"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğıäíúÿÿÿÿ
-R
-java:S1874"6Remove this use of "ProgressDialog"; it is deprecated.(ƒŒ)8ÀÉÔ¥/
+o	java:S100G"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›²Ûáıÿÿÿÿ8ÀÉÔ¥/
 S
 java:S1874("6Remove this use of "ProgressDialog"; it is deprecated.(’µ©Ä8ÀÉÔ¥/
-E
-java:S1874K"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ
-o	java:S100G"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›²Ûáıÿÿÿÿ8ÀÉÔ¥/
 C
 java:S16047"(Make this anonymous inner class a lambda(Êï ºüÿÿÿÿ
+h	java:S100'"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ğıäíúÿÿÿÿ
+E
+java:S1874K"/Remove this use of "Handler"; it is deprecated.(„ÑñŒ
+—
+java:S11869"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ş¨èº
+L
+java:S1874"/Remove this use of "Handler"; it is deprecated.(ïóî‘8ÀÉÔ¥/
+I
+java:S1874(",Remove this use of "show"; it is deprecated.(’µ©Ä8ÀÉÔ¥/
+R
+java:S1874"6Remove this use of "ProgressDialog"; it is deprecated.(ƒŒ)8ÀÉÔ¥/

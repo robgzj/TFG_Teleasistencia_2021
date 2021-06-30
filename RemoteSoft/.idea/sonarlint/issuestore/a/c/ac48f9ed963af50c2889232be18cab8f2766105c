@@ -1,0 +1,14 @@
+
+E
+java:S5411"*Use the primitive boolean expression here.(ò‡™µÿÿÿÿÿ
+w	java:S116"bRename this field "TAMANHO_VENTANA_DEFAULT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÐÓ©™
+f	java:S116	"QRename this field "UMBRAL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾åÖä
+t	java:S116"ZRename this field "TAMANHO_VENTANA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ëó™Óøÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(ÐÓ©™
+7
+java:S1170	"!Make this final field static too.(¾åÖä
+;
+java:S2129" Remove this "Double" constructor(›„»¨ùÿÿÿÿ
+;
+java:S2129" Remove this "Double" constructor(›„»¨ùÿÿÿÿ

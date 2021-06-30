@@ -346,7 +346,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
+    //Ventana para configurar los canales de ThingSpeak a usar.
     private void openConfigThingSpeak() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Datos de los canales");
