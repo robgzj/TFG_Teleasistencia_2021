@@ -131,4 +131,5 @@ Se intento duramente implementar el sistema de verificación de monitorización 
 
 App casi terminada
 
-DUDA: Funcionamiento en segundo plano, los sensores dejan de funcionar
+Semana 12 en adelante:
+Terminada la app, realizamos el informe

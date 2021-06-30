@@ -1,23 +1,37 @@
 
-—
-java:S1186K"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ĞŠß±
->
-java:S16040"(Make this anonymous inner class a lambda(³ÄËß
-n	java:S116 "TRename this field "btn_atras" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»–¯ºşÿÿÿÿ
-g
-java:S34573"Q%n should be used in place of \n to produce the platform-specific line separator.(›ˆÒ‹
-m
-java:S3252t"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí
-p	java:S116&"VRename this field "conectado_a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚é¼ÿúÿÿÿÿ
+O
+java:S1659""-Declare "txtAcelerometro" on a separate line.(•áıäûÿÿÿÿ8¿ÉÔ¥/
+t
+java:S1450!"XRemove the "btn_atras" field and declare it as a local variable in the relevant methods.(Ûá†w8¿ÉÔ¥/
+|
+java:S1450#"ZRemove the "conectado_a" field and declare it as a local variable in the relevant methods.(È°Îşøÿÿÿÿ8¿ÉÔ¥/
+E
+java:S16047"(Make this anonymous inner class a lambda(¿î³Ÿ8¿ÉÔ¥/
+
+java:S1450("_Remove the "mLocationManager" field and declare it as a local variable in the relevant methods.(»¨¨µÿÿÿÿÿ8¿ÉÔ¥/
 V	java:S110"<This class has 9 parents which is greater than 5 authorized.(Ä¯Òªùÿÿÿÿ
-C
-java:S1659!"-Declare "txtAcelerometro" on a separate line.(ØûåŒ
-l
-java:S3457<"Q%n should be used in place of \n to produce the platform-specific line separator.(Ä±Èøúÿÿÿÿ
-C
-java:S1604P"(Make this anonymous inner class a lambda(ˆúÕ÷şÿÿÿÿ
+
+java:S14501"]Remove the "mSensorManager" field and declare it as a local variable in the relevant methods.(Ü†‚µùÿÿÿÿ8¿ÉÔ¥/
+w	java:S116#"VRename this field "conectado_a" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(È°Îşøÿÿÿÿ8¿ÉÔ¥/
 o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯·‹”
-B
-java:S1659!",Declare "txtPulsaciones" on a separate line.(ØûåŒ
+—
+java:S1186P"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ĞŠß±
+J
+java:S1604U"(Make this anonymous inner class a lambda(ÌÊ–Ûÿÿÿÿÿ8¿ÉÔ¥/
+r
+java:S1450+"URemove the "device" field and declare it as a local variable in the relevant methods.(ø˜½º8¿ÉÔ¥/
+o	java:S116!"TRename this field "btn_atras" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ûá†w8¿ÉÔ¥/
+g
+java:S3457:"Q%n should be used in place of \n to produce the platform-specific line separator.(›ˆÒ‹
+N
+java:S1659"",Declare "txtPulsaciones" on a separate line.(•áıäûÿÿÿÿ8¿ÉÔ¥/
 m
-java:S3252t"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí
+java:S3252{"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí
+m
+java:S3252{"WUse static access with "androidx.core.content.ContextCompat" for "checkSelfPermission".(¥êêí
+}
+java:S14500"[Remove the "acelerometro" field and declare it as a local variable in the relevant methods.(Ççàôüÿÿÿÿ8¿ÉÔ¥/
+l
+java:S3457A"Q%n should be used in place of \n to produce the platform-specific line separator.(Ä±Èøúÿÿÿÿ
+r
+java:S1450,"URemove the "miBand" field and declare it as a local variable in the relevant methods.(ÛƒŸ›8¿ÉÔ¥/

@@ -98,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Caida" />
+                android:text="@string/tabla_caida" />
 
             <TextView
                 android:id="@+id/hay_caida"
@@ -127,5 +127,5 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/boton_atras2"
         android:layout_centerHorizontal="true"
-        android:text="No está vinculado a ninguna pulsera" />
+        android:text="@string/no_vinculado" />
 </RelativeLayout>

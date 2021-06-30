@@ -1054,11 +1054,15 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns1:g example="Mail" id="application_name">%s</ns1:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="acerca_de">Acerca de</string>
     <string name="app_name">RemoteSoft Receives</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="boton_atras">Atrás</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string description="A description of an action that a user of an accessibility service can perform to expand a bottomsheet halfway to its full height. [CHAR LIMIT=25]" name="bottomsheet_action_expand_halfway">Expand halfway</string>
+    <string name="c_x">Coordenada X</string>
+    <string name="c_y">Coordenada Y</string>
+    <string name="c_z">Coordenada Z</string>
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
@@ -1082,16 +1086,19 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="conf_Ts">Configurar ThingSpeak</string>
     <string name="error_icon_content_description">Error</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="hay_caida">¿Caída?</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="info_app">
         Aplicación desarollada por Roberto González Jiménez.
-        Su objetivo es la lectura de datos recibidos por ThingSpeak, los cuales se han enviado con la aplicación RemoteSoft.
-        Para que funcione la app es necesario tener conexión a internet.
+        Su objetivo es poder monitorizar a las personas dependientes para garantizar su seguridad, alarmando cuando haya posible peligro.
+        Se realiza la lectura de los datos almacenados en ThingSpeak, los cuales se han enviado con la aplicación RemoteSoft.
+        Para que funcione la app es necesario tener conexión a Internet.
     </string>
     <string name="item_view_role_description">Tab</string>
     <string name="map_key" translatable="false">AIzaSyB_qsP8AOP_P0MdlPz-48TDaJYjTP3vbjo</string>
@@ -1150,8 +1157,14 @@
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_eye_mask_visible" translatable="false">M2,4.27 L2,4.27 L4.54,1.73 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
+    <string name="pulsaciones">Pulsaciones</string>
     <string name="search_menu_title">Search</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="valor_puls">Valor pulsaciones</string>
+    <string name="valores_ac">Valores Acelerometro</string>
+    <string name="ver_acelerometro">Ver Acelerómetro</string>
+    <string name="ver_pulsaciones">Ver Pulsaciones</string>
+    <string name="ver_ubicacion">Ver Ubicación</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="AndroidThemeColorAccentYellow" ns2:ignore="NewApi">

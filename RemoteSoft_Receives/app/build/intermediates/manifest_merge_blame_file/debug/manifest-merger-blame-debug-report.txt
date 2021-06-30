@@ -6,117 +6,118 @@
 6
 7    <uses-sdk
 8        android:minSdkVersion="30"
-8-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml
+8-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
-9-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml
+9-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.WAKE_LOCK" />
-11-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:5:5-68
-11-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:5:22-65
+11-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:5:5-68
+11-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:5:22-65
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:6:5-67
-12-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:6:22-64
+12-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:6:5-67
+12-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:6:22-64
 13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-13-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:7:5-79
-13-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:7:22-76
+13-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:7:5-79
+13-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:7:22-76
 14    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-14-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:8:5-75
-14-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:8:22-72
+14-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:8:5-75
+14-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:8:22-72
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:6:5-67
-15-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:6:22-64
+15-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:6:5-67
+15-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:6:22-64
 16    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-16-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:10:5-78
-16-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:10:22-76
+16-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:10:5-78
+16-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:10:22-76
 17    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-17-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:11:5-80
-17-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:11:22-78
+17-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:11:5-80
+17-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:11:22-78
 18
 19    <uses-feature
-19-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\c64c23b59780e877a5cc664e0b5a91a7\jetified-play-services-maps-16.1.0\AndroidManifest.xml:26:5-28:35
+19-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\cb4b98b45b79e9342b2b08ee35e3342f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:26:5-28:35
 20        android:glEsVersion="0x00020000"
-20-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\c64c23b59780e877a5cc664e0b5a91a7\jetified-play-services-maps-16.1.0\AndroidManifest.xml:27:9-41
+20-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\cb4b98b45b79e9342b2b08ee35e3342f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:27:9-41
 21        android:required="true" />
-21-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\c64c23b59780e877a5cc664e0b5a91a7\jetified-play-services-maps-16.1.0\AndroidManifest.xml:28:9-32
+21-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\cb4b98b45b79e9342b2b08ee35e3342f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:28:9-32
 22
 23    <application
-23-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:15:5-39:19
+23-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:15:5-39:19
 24        android:allowBackup="true"
-24-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:16:9-35
+24-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:16:9-35
 25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-25-->[androidx.core:core:1.3.1] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\8dbd859d1cd89239b42e7382b4fc40d7\core-1.3.1\AndroidManifest.xml:24:18-86
+25-->[androidx.core:core:1.3.1] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\8dbd859d1cd89239b42e7382b4fc40d7\core-1.3.1\AndroidManifest.xml:24:18-86
 26        android:debuggable="true"
 27        android:extractNativeLibs="false"
 28        android:icon="@mipmap/logo_app"
-28-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:17:9-40
+28-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:17:9-40
 29        android:label="@string/app_name"
-29-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:18:9-41
+29-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:18:9-41
 30        android:roundIcon="@mipmap/logo_app_round"
-30-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:19:9-51
+30-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:19:9-51
 31        android:supportsRtl="true"
-31-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:20:9-35
-32        android:theme="@style/Theme.RemoteSoft_Receives" >
-32-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:21:9-57
-33        <meta-data
-33-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:23:9-24:46
-34            android:name="com.google.android.geo.API_KEY"
-34-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:23:20-65
-35            android:value="@string/map_key" />
-35-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:24:13-44
-36
-37        <activity android:name="com.example.remotesoft_receives.AcercaDeActivity" />
-37-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:26:9-63
-37-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:26:19-51
-38        <activity android:name="com.example.remotesoft_receives.verAcelerometroActivity" />
-38-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:27:9-61
-38-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:27:19-58
-39        <activity android:name="com.example.remotesoft_receives.verUbicacionActivity" />
-39-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:28:9-58
-39-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:28:19-55
-40        <activity android:name="com.example.remotesoft_receives.verPulsacionesActivity" />
-40-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:29:9-60
-40-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:29:19-57
-41        <activity android:name="com.example.remotesoft_receives.MainActivity" >
-41-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:30:9-36:20
-41-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:30:19-47
-42            <intent-filter>
-42-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:31:13-35:29
-43                <action android:name="android.intent.action.MAIN" />
-43-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:32:17-69
-43-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:32:25-66
-44
-45                <category android:name="android.intent.category.LAUNCHER" />
-45-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:34:17-77
-45-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:34:27-74
-46            </intent-filter>
-47        </activity>
-48
-49        <service android:name="org.eclipse.paho.android.service.MqttService" />
-49-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:38:9-80
-49-->C:\Users\GORDO\Documents\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:38:18-77
-50        <!-- Needs to be explicitly declared on P+ -->
-51        <uses-library
-51-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\c64c23b59780e877a5cc664e0b5a91a7\jetified-play-services-maps-16.1.0\AndroidManifest.xml:33:9-35:40
-52            android:name="org.apache.http.legacy"
-52-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\c64c23b59780e877a5cc664e0b5a91a7\jetified-play-services-maps-16.1.0\AndroidManifest.xml:34:13-50
-53            android:required="false" />
-53-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\c64c23b59780e877a5cc664e0b5a91a7\jetified-play-services-maps-16.1.0\AndroidManifest.xml:35:13-37
-54
-55        <activity
-55-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\f85e7465361a1039bd21ee0c09c02b55\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
-56            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-56-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\f85e7465361a1039bd21ee0c09c02b55\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
-57            android:exported="false"
-57-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\f85e7465361a1039bd21ee0c09c02b55\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
-58            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-58-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\f85e7465361a1039bd21ee0c09c02b55\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
-59
-60        <meta-data
-60-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\1b8ff490d7c7139b5f80a03558405bb6\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
-61            android:name="com.google.android.gms.version"
-61-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\1b8ff490d7c7139b5f80a03558405bb6\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58
-62            android:value="@integer/google_play_services_version" />
-62-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\GORDO\.gradle\wrapper\dists\gradle-6.8.3-all\caches\transforms-2\files-2.1\1b8ff490d7c7139b5f80a03558405bb6\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
-63    </application>
-64
-65</manifest>
+31-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:20:9-35
+32        android:testOnly="true"
+33        android:theme="@style/Theme.RemoteSoft_Receives" >
+33-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:21:9-57
+34        <meta-data
+34-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:23:9-24:46
+35            android:name="com.google.android.geo.API_KEY"
+35-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:23:20-65
+36            android:value="@string/map_key" />
+36-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:24:13-44
+37
+38        <activity android:name="com.example.remotesoft_receives.AcercaDeActivity" />
+38-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:26:9-63
+38-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:26:19-51
+39        <activity android:name="com.example.remotesoft_receives.verAcelerometroActivity" />
+39-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:27:9-61
+39-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:27:19-58
+40        <activity android:name="com.example.remotesoft_receives.verUbicacionActivity" />
+40-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:28:9-58
+40-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:28:19-55
+41        <activity android:name="com.example.remotesoft_receives.verPulsacionesActivity" />
+41-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:29:9-60
+41-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:29:19-57
+42        <activity android:name="com.example.remotesoft_receives.MainActivity" >
+42-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:30:9-36:20
+42-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:30:19-47
+43            <intent-filter>
+43-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:31:13-35:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:32:17-69
+44-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:32:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:34:17-77
+46-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:34:27-74
+47            </intent-filter>
+48        </activity>
+49
+50        <service android:name="org.eclipse.paho.android.service.MqttService" />
+50-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:38:9-80
+50-->C:\Users\rgonz\OneDrive\Documentos\MEGA\MEGAsync Uploads\UNI\TFG\RemoteSoft_Receives\app\src\main\AndroidManifest.xml:38:18-77
+51        <!-- Needs to be explicitly declared on P+ -->
+52        <uses-library
+52-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\cb4b98b45b79e9342b2b08ee35e3342f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:33:9-35:40
+53            android:name="org.apache.http.legacy"
+53-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\cb4b98b45b79e9342b2b08ee35e3342f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:34:13-50
+54            android:required="false" />
+54-->[com.google.android.gms:play-services-maps:16.1.0] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\cb4b98b45b79e9342b2b08ee35e3342f\jetified-play-services-maps-16.1.0\AndroidManifest.xml:35:13-37
+55
+56        <activity
+56-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\c471a528e8e5f008facb2f8a4ea9dae9\jetified-play-services-base-16.0.1\AndroidManifest.xml:23:9-26:75
+57            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+57-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\c471a528e8e5f008facb2f8a4ea9dae9\jetified-play-services-base-16.0.1\AndroidManifest.xml:24:13-79
+58            android:exported="false"
+58-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\c471a528e8e5f008facb2f8a4ea9dae9\jetified-play-services-base-16.0.1\AndroidManifest.xml:25:13-37
+59            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+59-->[com.google.android.gms:play-services-base:16.0.1] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\c471a528e8e5f008facb2f8a4ea9dae9\jetified-play-services-base-16.0.1\AndroidManifest.xml:26:13-72
+60
+61        <meta-data
+61-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\9702981235b9fb1509b8bc585395dbff\jetified-play-services-basement-16.0.1\AndroidManifest.xml:23:9-25:69
+62            android:name="com.google.android.gms.version"
+62-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\9702981235b9fb1509b8bc585395dbff\jetified-play-services-basement-16.0.1\AndroidManifest.xml:24:13-58
+63            android:value="@integer/google_play_services_version" />
+63-->[com.google.android.gms:play-services-basement:16.0.1] C:\Users\rgonz\.gradle\caches\transforms-2\files-2.1\9702981235b9fb1509b8bc585395dbff\jetified-play-services-basement-16.0.1\AndroidManifest.xml:25:13-66
+64    </application>
+65
+66</manifest>

@@ -9,6 +9,7 @@ import android.widget.Button;
 public class AcercaDeActivity extends AppCompatActivity {
 
     private Button btn_atras;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,9 +17,8 @@ public class AcercaDeActivity extends AppCompatActivity {
 
         btn_atras= findViewById(R.id.boton_atras);
         btn_atras.setOnClickListener(v -> openMainActivity());
-
-
     }
+
     public void openMainActivity(){
         super.onBackPressed();
         this.finish();

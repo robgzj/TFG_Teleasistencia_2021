@@ -37,7 +37,7 @@
             android:layout_alignParentStart="false"
             android:layout_alignParentTop="false"
             android:layout_centerInParent="true"
-            android:text="Vincular pulsera" />
+            android:text="@string/vincular_pulsera" />
 
         <Switch
             android:id="@+id/encender_app"
@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@id/acerca_de"
             android:layout_centerHorizontal="true"
-            android:text="No está vinculado a ninguna pulsera" />
+            android:text="@string/no_vinculado" />
 
         <Button
             android:id="@+id/btn_configTS"
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/vincular_pulsera"
             android:layout_centerInParent="true"
-            android:text="Configurar ThingSpeak" />
+            android:text="@string/conf_ts" />
 
     </RelativeLayout>
 

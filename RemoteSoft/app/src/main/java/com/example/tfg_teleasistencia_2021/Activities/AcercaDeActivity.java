@@ -15,10 +15,12 @@ import com.zhaoxiaodan.miband.MiBand;
 public class AcercaDeActivity extends AppCompatActivity {
 
     private Button btn_atras;
+    private TextView conectado_a;
+
+    //Atributos de la pulsera
     private MiBand miBand;
     private BluetoothDevice device;
     private Pulsera pulsera;
-    private TextView conectado_a;
 
 
     @Override
@@ -36,6 +38,7 @@ public class AcercaDeActivity extends AppCompatActivity {
         miBand = new MiBand(this);
         pulsera = new Pulsera(miBand, device);
 
+        //Conservamos la conexion si hay dispositivo vinculado
         if (device != null) {
             pulsera.conectar_dispositivo(this);
             conectado_a.setText("Conectado a: " + device.getName());

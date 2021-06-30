@@ -15,8 +15,6 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
-q
-Aapp/src/main/java/com/example/tfg_teleasistencia_2021/Window.java,a\6\a671eb5abea494d41349ec4ae2354434ae50e03b
 r
 Bapp/src/main/java/com/example/tfg_teleasistencia_2021/Pulsera.java,9\8\981a52249be2a1d3eb05f5c9f10cccd3b678dd79
 ‚

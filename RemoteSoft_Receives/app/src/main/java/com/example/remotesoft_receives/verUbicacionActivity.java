@@ -26,16 +26,21 @@ import org.json.JSONObject;
 
 public class verUbicacionActivity extends  AppCompatActivity implements OnMapReadyCallback {
 
+    //Atributos utilizados en la vista
     private Button btn_atras;
+
+    //Por defecto mandara a las coordenadas 0 0
     private double latitud=0;
     private double longitud=0;
-    //MQTT
+
+    //Atributos MQTT para suscribirse y recibir los datos de los sensores por ThingSpeak
     private MqttAndroidClient client;
     private String username;
     private String MQTT_API_Key;
     private String channelID;
     private String READ_API_KEY;
 
+    //Atributos utilizados en el parseo JSON
     private String textoJSON;
     private JSONObject jsonObject;
 
@@ -54,6 +59,7 @@ public class verUbicacionActivity extends  AppCompatActivity implements OnMapRea
         username=intent.getExtras().getString("username");
 
         SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.google_map);
+
         try {
             String clientId = MqttClient.generateClientId();
             client = new MqttAndroidClient(verUbicacionActivity.this.getApplicationContext(), "tcp://mqtt.thingspeak.com:1883", clientId);
@@ -66,7 +72,6 @@ public class verUbicacionActivity extends  AppCompatActivity implements OnMapRea
             token.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
-                    // We are connected
                     try {
                         client.subscribe("channels/" + channelID + "/subscribe/json/" + READ_API_KEY, 0);
 
@@ -103,7 +108,6 @@ public class verUbicacionActivity extends  AppCompatActivity implements OnMapRea
 
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                    // Something went wrong e.g. connection timeout or firewall problems
                 }
             });
 
@@ -111,8 +115,6 @@ public class verUbicacionActivity extends  AppCompatActivity implements OnMapRea
         } catch (MqttException e) {
             e.printStackTrace();
         }
-
-
     }
 
 
@@ -121,6 +123,7 @@ public class verUbicacionActivity extends  AppCompatActivity implements OnMapRea
         this.finish();
     }
 
+    //Pone la ubicacion con su marcador
     @Override
     public void onMapReady(GoogleMap googleMap) {
         LatLng latLng=new LatLng(latitud, longitud);

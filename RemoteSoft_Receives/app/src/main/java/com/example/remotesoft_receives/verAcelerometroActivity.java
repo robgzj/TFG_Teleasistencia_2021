@@ -20,17 +20,20 @@ import org.json.JSONObject;
 
 public class verAcelerometroActivity extends AppCompatActivity {
 
+    //Atributos utilizados en la vista
     private Button btn_atras;
     private TextView valor_cor_x, valor_cor_y, valor_cor_z, valor_hayCaida;
+
     private double cor_x, cor_y, cor_z;
 
-    //MQTT
+    //Atributos MQTT para suscribirse y recibir los datos de los sensores por ThingSpeak
     private MqttAndroidClient client;
     private String username;
     private String MQTT_API_Key;
     private String channelID;
     private String READ_API_KEY;
 
+    //Atributos utilizados en el parseo JSON
     private String textoJSON;
     private JSONObject jsonObject;
 
@@ -66,7 +69,6 @@ public class verAcelerometroActivity extends AppCompatActivity {
         token.setActionCallback(new IMqttActionListener() {
             @Override
             public void onSuccess(IMqttToken asyncActionToken) {
-                // We are connected
                 try {
                     client.subscribe("channels/" + channelID + "/subscribe/json/" + READ_API_KEY, 0);
 
@@ -113,7 +115,6 @@ public class verAcelerometroActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                // Something went wrong e.g. connection timeout or firewall problems
             }
         });
 

@@ -20,17 +20,20 @@ import org.json.JSONObject;
 
 public class verPulsacionesActivity extends AppCompatActivity {
 
+    //Atributos utilizados en la vista
     private Button btn_atras;
     private TextView valorPulsaciones;
+
     private int pulsaciones;
 
-    //MQTT
+    //Atributos MQTT para suscribirse y recibir los datos de los sensores por ThingSpeak
     private MqttAndroidClient client;
     private String username;
     private String MQTT_API_Key;
     private String channelID;
     private String READ_API_KEY;
 
+    //Atributos utilizados en el parseo JSON
     private String textoJSON;
     private JSONObject jsonObject;
 
@@ -61,7 +64,6 @@ public class verPulsacionesActivity extends AppCompatActivity {
             token.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
-                    // We are connected
                     try {
                         client.subscribe("channels/" + channelID + "/subscribe/json/" + READ_API_KEY, 0);
 
@@ -96,7 +98,6 @@ public class verPulsacionesActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                    // Something went wrong e.g. connection timeout or firewall problems
                 }
             });
 

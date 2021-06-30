@@ -2,9 +2,22 @@
     <string name="app_name">RemoteSoft Receives</string>
     <string name="info_app">
         Aplicación desarollada por Roberto González Jiménez.
-        Su objetivo es la lectura de datos recibidos por ThingSpeak, los cuales se han enviado con la aplicación RemoteSoft.
-        Para que funcione la app es necesario tener conexión a internet.
+        Su objetivo es poder monitorizar a las personas dependientes para garantizar su seguridad, alarmando cuando haya posible peligro.
+        Se realiza la lectura de los datos almacenados en ThingSpeak, los cuales se han enviado con la aplicación RemoteSoft.
+        Para que funcione la app es necesario tener conexión a Internet.
     </string>
     <string name="boton_atras">Atrás</string>
     <string name="map_key" translatable="false">AIzaSyB_qsP8AOP_P0MdlPz-48TDaJYjTP3vbjo</string>
+    <string name="ver_pulsaciones">Ver Pulsaciones</string>
+    <string name="ver_ubicacion">Ver Ubicación</string>
+    <string name="ver_acelerometro">Ver Acelerómetro</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="conf_Ts">Configurar ThingSpeak</string>
+    <string name="valores_ac">Valores Acelerometro</string>
+    <string name="c_x">Coordenada X</string>
+    <string name="c_y">Coordenada Y</string>
+    <string name="c_z">Coordenada Z</string>
+    <string name="hay_caida">¿Caída?</string>
+    <string name="pulsaciones">Pulsaciones</string>
+    <string name="valor_puls">Valor pulsaciones</string>
 </resources>

@@ -17,6 +17,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,7 +32,7 @@ import androidx.core.app.ActivityCompat;
 
 import com.example.tfg_teleasistencia_2021.Pulsera;
 import com.example.tfg_teleasistencia_2021.R;
-import com.example.tfg_teleasistencia_2021.Window;
+import com.example.tfg_teleasistencia_2021.DetectaCaida;
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -49,9 +50,12 @@ import com.zhaoxiaodan.miband.listeners.HeartRateNotifyListener;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Atributos utilizados en la vista
     private Button btn_acercaDe, btn_datosSensores, btn_vinculacion, btn_configTS;
     private Switch switchB;
+    private TextView conectado_a;
 
+    //Valores a enviar por ThingSpeak
     private double valorLatitud;
     private double valorLongitud;
     private double valorX;
@@ -59,39 +63,52 @@ public class MainActivity extends AppCompatActivity {
     private double valorZ ;
     private String valoresPulsacion="0";
     private String hayCaida="0";
-    private TextView conectado_a;
 
+    //Atributos del editor para guardar los datos de forma persistente
     private SharedPreferences.Editor editor;
     private SharedPreferences sharedPreferences;
 
+    //Atributos para el control de la pulsera
     private MiBand miBand;
     private BluetoothDevice device;
     private Pulsera pulsera;
+
+    //Atributos utilizados para la deteccion de caida
     private double ac;
-    private Window ventana;
+    private DetectaCaida ventana;
 
-
+    //Atributos del acelerometro
+    private SensorManager mSensorManager;
     private Sensor acelerometro;
+
+    //Atributos para calcular la  ubicacion
     private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
     private LocationManager mLocationManager;
-    private SensorManager mSensorManager;
 
-    //MQTT
+    //Atributos MQTT para el envio de datos por ThingSpeak
     private MqttAndroidClient client;
     private String username;
     private String channelID;
     private String WRITE_API_KEY;
 
+    //Atributos MQTT para suscribirse y comprobar si hay monitorizacion por ThingSpeak
     private MqttAndroidClient clientConf;
     private String MQTT_API_Key;
     private String channelID_Conf;
     private String READ_API_KEY_Conf;
 
-    private String textoJSON;
-    private JSONObject jsonObject;
+    //Atributo de monitorizacion, 1 si esta monitorizando 0 si no
     private int estadoMonitorizacion;
 
+    //Atributos utilizados en el parseo JSON
+    private String textoJSON;
+    private JSONObject jsonObject;
+
+    private PowerManager.WakeLock wakeLock;
+
     private Handler handlerPublish = new Handler();
+
+    //Runnable del envio de los datos a ThingSpeak periodico
     private Runnable runnablePublish= new Runnable() {
         public void run() {
             try {
@@ -106,9 +123,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-
-
-
+    //Listener de la ubicacion
     private LocationListener mLocationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
@@ -117,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-
+    // Listener del acelerometro
     private SensorEventListener mSensorListener = new SensorEventListener() {
         @Override
         public void onSensorChanged(SensorEvent event) {
@@ -125,6 +140,7 @@ public class MainActivity extends AppCompatActivity {
             valorY = event.values[1];
             valorZ = event.values[2];
 
+            //Calculo del modulo de aceleracion
             ac = Math.sqrt(event.values[0] * event.values[0] + event.values[1] * event.values[1] + event.values[2] * event.values[2]);
 
             ventana.add(ac);
@@ -141,13 +157,14 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    //Listener de las pulsaciones
     private HeartRateNotifyListener mHealthListener= new HeartRateNotifyListener() {
         @Override
         public void onNotify(int heartRate) {
             if(estadoMonitorizacion==1){
                 valoresPulsacion = heartRate+"";
             }else if(estadoMonitorizacion == 0 && heartRate<100){
-                    //No actualizar nada
+                    //No actualizar nada, no es situacion de peligro mientras no se monitoriza
             }else{
                 valoresPulsacion = heartRate+"";
             }
@@ -179,29 +196,34 @@ public class MainActivity extends AppCompatActivity {
 
         conectado_a = findViewById(R.id.conectado_a);
 
-        ventana = new Window();
+        //Creacion de la ventana del algoritmo de caida, por defecto a 10 valores
+        ventana = new DetectaCaida();
 
+        //Detecta si se ha pasado una pulsera, si lo detecta se conecta
         Intent intent = this.getIntent();
         device = intent.getParcelableExtra("device");
         if (device != null) {
             miBand = new MiBand(this);
             pulsera = new Pulsera(miBand, device);
+            //Si el switch esta desactivado solo se conecta, si esta activado se conecta y empieza a calcular pulsaciones, se hace más adelante eso
             if(!switchB.isChecked()){
                 pulsera.conectar_dispositivo(this);
                 conectado_a.setText("Conectado a: " + device.getName());
             }
         }
 
-
+        //Inicializamos el listener del acelerometro
         getAccelerometerValues();
 
         //Si no ha pedido permisos de ubicación los pide, si ya los ha pedido, no hace falta
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_CODE_LOCATION_PERMISSION);
         } else {
+            //Inicializamos el listener de la ubicacion
             getCurrentLocation();
         }
 
+        //Listener que se activa al clickar al switch
         switchB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -212,17 +234,22 @@ public class MainActivity extends AppCompatActivity {
                     editor.putBoolean("value", false);
                     editor.apply();
                     switchB.setChecked(false);
+                    //Se guarda de manera persistente el estado del switch
+
+                    //Si hay pulsera conectada deja de calcular pulsaciones
                     if(device !=null){
                         pulsera.stopCalcularPulsaciones();
                     }
                     handlerPublish.removeCallbacks(runnablePublish);
 
+                    //Dejamos la suscripcion
                     try {
                         clientConf.unsubscribe("channels/" + channelID_Conf + "/subscribe/json/" + READ_API_KEY_Conf);
                     } catch (MqttException e) {
                         e.printStackTrace();
                     }
-
+                    //Si dejamos de enviar liberamos el wakelock
+                    wakeLock.release();
                 }
             }
         });
@@ -233,10 +260,11 @@ public class MainActivity extends AppCompatActivity {
             editor.putBoolean("value", false);
             editor.apply();
             switchB.setChecked(false);
+
+            //Por precaucion dejamos de calcular pulsaciones
             if(device !=null){
                 pulsera.stopCalcularPulsaciones();
             }
-            handlerPublish.removeCallbacks(runnablePublish);
         }
     }
 
@@ -291,8 +319,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         this.finish();
     }
-
+    //Se ejecutara este metodo al encender el switch
     private void switchActivado() {
+        //Al dar al switch adquirimos el wakelock
+        PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+                "MyApp::MyWakelockTag");
+        wakeLock.acquire();
+
         editor = getSharedPreferences("save", MODE_PRIVATE).edit();
         editor.putBoolean("value", true);
         editor.apply();
@@ -304,6 +338,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         try {
+            //Obtemos los datos de los canales de ThingSpeak que estan guardados de manera persistente
             channelID = sharedPreferences.getString("canal", "");
             WRITE_API_KEY = sharedPreferences.getString("writeKey", "");
             username = sharedPreferences.getString("username", "");
@@ -312,12 +347,13 @@ public class MainActivity extends AppCompatActivity {
             MQTT_API_Key = sharedPreferences.getString("MQTTKey", "");
             READ_API_KEY_Conf = sharedPreferences.getString("readKeyConf", "");
 
+            //En el caso que no se hayan introducido ningun dato o esten incorrectos se pone por defecto a mis canales, cambiar en versiones futuras
             if (channelID.equals("")  || MQTT_API_Key.equals("") || username.equals("") || WRITE_API_KEY.equals("") || READ_API_KEY_Conf.equals("")|| channelID_Conf.equals("") ) {
                 channelID = "1362377";
                 username = "mwa0000022240279";
                 WRITE_API_KEY = "Q38TDPXSWT30IT7T";
-                MQTT_API_Key = "OXEBXSCYAENX76QW";
 
+                MQTT_API_Key = "OXEBXSCYAENX76QW";
                 READ_API_KEY_Conf = "SHB808A21438C1UA";
                 channelID_Conf = "1402766";
 
@@ -329,19 +365,18 @@ public class MainActivity extends AppCompatActivity {
             token.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
-                    // We are connected
+                    // Si conectamos ejecutamos la actividad periodica de enviar cada 20 segundos
                     handlerPublish.postDelayed(runnablePublish, 20000);
                 }
 
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                    // Something went wrong e.g. connection timeout or firewall problems
-
+                    //Si da error se notifica
                     Toast.makeText(MainActivity.this, "Error de conexion a TS", Toast.LENGTH_SHORT).show();
                 }
             });
 
-            //Conectamos al cliente de recibir la confirmacion
+            //Conectamos al cliente de recibir la si hay alguien monitorizando
             String clientId_Conf = MqttClient.generateClientId();
             clientConf = new MqttAndroidClient(MainActivity.this.getApplicationContext(), "tcp://mqtt.thingspeak.com:1883", clientId_Conf);
 
@@ -354,8 +389,9 @@ public class MainActivity extends AppCompatActivity {
             token_conf.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
-                    // We are connected
+
                     try {
+                        // Si conectamos se suscribe
                         clientConf.subscribe("channels/" + channelID_Conf + "/subscribe/json/" + READ_API_KEY_Conf, 0);
 
                         clientConf.setCallback(new MqttCallback() {
@@ -367,7 +403,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void messageArrived(String topic, MqttMessage message) throws Exception {
                                 textoJSON = new String(message.getPayload());
-                                //Aqui hacer el parseo
+                                //Aqui hacer el parseo de cada mensaje llegado
                                 jsonObject = new JSONObject(textoJSON);
                                 estadoMonitorizacion = jsonObject.getInt("field1");
                             }
@@ -385,7 +421,6 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                    // Something went wrong e.g. connection timeout or firewall problems
                     Toast.makeText(MainActivity.this, "Error de conexion a TS", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -394,18 +429,16 @@ public class MainActivity extends AppCompatActivity {
         e.printStackTrace();
     }
 
-
-
-
     }
-
+    //Metodo que sirve para configurar los datos de los canales de ThingSpeak
     private void openConfigThingSpeak() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Datos del canal de destino");
+        builder.setTitle("Datos de los canales");
 
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
 
+        //Añadimos los campos uno a uno
         final EditText username_Box = new EditText(this);
         username_Box.setHint("Username");
         layout.addView(username_Box);
@@ -425,20 +458,19 @@ public class MainActivity extends AppCompatActivity {
 
 
         final EditText channelID_Conf_Box = new EditText(this);
-        channelID_Conf_Box.setHint("Channel ID Confirmación");
+        channelID_Conf_Box.setHint("Channel ID Monitorización");
         layout.addView(channelID_Conf_Box);
 
         final EditText READ_API_KEY_Conf_Box = new EditText(this);
-        READ_API_KEY_Conf_Box.setHint("READ_API_KEY Confirmación");
+        READ_API_KEY_Conf_Box.setHint("READ_API_KEY Monitorización");
         layout.addView(READ_API_KEY_Conf_Box);
-
-
 
 
         builder.setView(layout);
         builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                //Modificamos los datos persistentes de los canales de ThingSpeak
                 editor = getSharedPreferences("save", MODE_PRIVATE).edit();
                 editor.putString("canal", channelID_Box.getText().toString());
                 editor.putString("writeKey", WRITE_API_KEY_Box.getText().toString());
@@ -447,8 +479,9 @@ public class MainActivity extends AppCompatActivity {
                 editor.putString("canalConf", channelID_Conf_Box.getText().toString());
                 editor.putString("MQTTKey", MQTT_API_Key_Box.getText().toString());
                 editor.putString("readKeyConf", READ_API_KEY_Conf_Box.getText().toString());
-
                 editor.apply();
+
+                //El switch desactivado para poder aplicar los cambios
                 switchB.setChecked(false);
             }
         });

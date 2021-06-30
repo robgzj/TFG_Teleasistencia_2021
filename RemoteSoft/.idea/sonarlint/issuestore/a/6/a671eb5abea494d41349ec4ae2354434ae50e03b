@@ -1,14 +1,0 @@
-
-v	java:S116"ZRename this field "TAMANHO_DEFAULT" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ê¸Ð‘8æ¼„‰˜/
-B
-java:S2129" Remove this "Double" constructor(›„»¨ùÿÿÿÿ8æ¼„‰˜/
-E
-java:S5411"*Use the primitive boolean expression here.(ò‡™µÿÿÿÿÿ
-;
-java:S2129" Remove this "Double" constructor(›„»¨ùÿÿÿÿ
-7
-java:S1170"!Make this final field static too.(Ê¸Ð‘
-n	java:S116"RRename this field "TAMANHO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(´«Ñ¦8æ¼„‰˜/
-r	java:S116	"QRename this field "UMBRAL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Û€ˆ–úÿÿÿÿ8æ¼„‰˜/
-<
-java:S1170	"!Make this final field static too.(Û€ˆ–úÿÿÿÿ

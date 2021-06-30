@@ -28,7 +28,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
             android:layout_marginBottom="15dp"
-            android:text="ver Pulsaciones"
+            android:text="@string/ver_pulsaciones"
             android:textColor="#FFFFFF"
             android:visibility="invisible" />
 
@@ -42,7 +42,7 @@
             android:layout_centerInParent="false"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="15dp"
-            android:text="Ver Ubicacion"
+            android:text="@string/ver_ubicacion"
             android:textColor="#FFFFFF"
             android:visibility="invisible" />
 
@@ -55,7 +55,7 @@
             android:layout_alignParentTop="false"
             android:layout_centerInParent="false"
             android:layout_centerHorizontal="true"
-            android:text="ver Acelerometro"
+            android:text="@string/ver_acelerometro"
             android:textColor="#FFFFFF"
             android:visibility="invisible" />
 
@@ -79,7 +79,7 @@
             android:layout_alignParentStart="false"
             android:layout_alignParentTop="false"
             android:layout_centerInParent="true"
-            android:text="Configurar ThingSpeak"
+            android:text="@string/conf_Ts"
             android:textColor="#FFFFFF" />
 
         <Button
@@ -89,7 +89,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
             android:layout_marginBottom="25dp"
-            android:text="Acerca de" />
+            android:text="@string/acerca_de" />
 
     </RelativeLayout>
 

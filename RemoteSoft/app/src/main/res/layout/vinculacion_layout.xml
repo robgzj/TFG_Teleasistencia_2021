@@ -19,7 +19,7 @@
         android:layout_centerHorizontal="true"
         android:scaleX="1"
         android:scaleY="1"
-        android:text="Escanear dispositivos" />
+        android:text="@string/esca_disp" />
 
     <ListView
         android:id="@+id/lista_dispositivos"

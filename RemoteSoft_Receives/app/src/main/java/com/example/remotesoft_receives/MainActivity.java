@@ -12,6 +12,7 @@ import android.media.RingtoneManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.PowerManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,34 +37,40 @@ import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Atributos utilizados en la vista
     private Button btn_acercaDe, btn_configTS;
     private Switch switchB;
-
     private Button btn_pulsaciones, btn_ubicacion, btn_acelerometro;
+
+    //Atributos del editor para guardar los datos de forma persistente
     private SharedPreferences.Editor editor;
     private SharedPreferences sharedPreferences;
-    //MQTT
+
+    //Atributos MQTT para suscribirse y recibir los datos de los sensores por ThingSpeak
     private MqttAndroidClient client;
     private String username;
     private String MQTT_API_Key;
     private String channelID;
     private String READ_API_KEY;
 
+    //Atributos MQTT para el envio de la señal de monitorizacion por ThingSpeak
     private MqttAndroidClient clientConf;
     private String channelID_Conf;
     private String WRITE_API_KEY_Conf;
 
+    //Atributos utilizados en el parseo JSON
     private String textoJSON;
     private JSONObject jsonObject;
 
-    private double latitud, longitud;
+    //Atributos que nos dicen si suena alguna alarma
     private String pulsaciones, caida;
-    private double cor_x, cor_y, cor_z;
     private boolean hayCaida;
 
+    private PowerManager.WakeLock wakeLock;
 
     private Handler handlerPublish = new Handler();
 
+    //Runnable que envia una señal de monitorizacion cada 15 segundos
     private Runnable runnablePublish= new Runnable() {
         public void run() {
             try {
@@ -74,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             handlerPublish.postDelayed(this, 15000);
         }
     };
-
+    //Runnable que envia una señal de que no se esta monitorizando
     private Runnable runnableStopMonitorizacion= new Runnable() {
         public void run() {
             try {
@@ -116,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (switchB.isChecked()) {
+                    //Paramos el envio de la señal de no monitorizacion por si se estaba mandando en ese momento
                     handlerPublish.removeCallbacks(runnableStopMonitorizacion);
                     switchActivado();
                 } else {
@@ -123,9 +131,12 @@ public class MainActivity extends AppCompatActivity {
                     editor.putBoolean("value", false);
                     editor.apply();
                     switchB.setChecked(false);
+
                     btn_pulsaciones.setVisibility(View.INVISIBLE);
                     btn_ubicacion.setVisibility(View.INVISIBLE);
                     btn_acelerometro.setVisibility(View.INVISIBLE);
+
+                    //Paramos el envio de la señal de monitorizacion
                     handlerPublish.removeCallbacks(runnablePublish);
 
                     handlerPublish.postDelayed(runnableStopMonitorizacion,15000);
@@ -134,6 +145,8 @@ public class MainActivity extends AppCompatActivity {
                     } catch (MqttException e) {
                         e.printStackTrace();
                     }
+
+                    wakeLock.release();
                 }
             }
         });
@@ -145,49 +158,40 @@ public class MainActivity extends AppCompatActivity {
             editor.putBoolean("value", false);
             editor.apply();
             switchB.setChecked(false);
+
             btn_pulsaciones.setVisibility(View.INVISIBLE);
             btn_ubicacion.setVisibility(View.INVISIBLE);
             btn_acelerometro.setVisibility(View.INVISIBLE);
-            handlerPublish.removeCallbacks(runnablePublish);
-
-            handlerPublish.postDelayed(runnableStopMonitorizacion,15000);
-
-            try {
-                client.unsubscribe("channels/" + channelID + "/subscribe/json/" + READ_API_KEY);
-            } catch (MqttException e) {
-                e.printStackTrace();
-            }
-
         }
 
     }
 
-    public void showNotification(Context context, String title, String message, Intent intent, int reqCode) {
+    public void showNotification(String title, String message, int reqCode) {
 
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, reqCode, intent, PendingIntent.FLAG_ONE_SHOT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this, reqCode, new Intent(), PendingIntent.FLAG_ONE_SHOT);
         String CHANNEL_ID = "RS-Channel";
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context, CHANNEL_ID)
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(MainActivity.this, CHANNEL_ID)
                 .setSmallIcon(R.color.design_default_color_error)
                 .setContentTitle(title)
                 .setContentText(message)
                 .setAutoCancel(true)
                 .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setContentIntent(pendingIntent);
-        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            CharSequence name = "RS-Channel";// The user-visible name of the channel.
-            int importance = NotificationManager.IMPORTANCE_HIGH;
-            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, name, importance);
-            notificationManager.createNotificationChannel(mChannel);
-        }
-        notificationManager.notify(reqCode, notificationBuilder.build()); // 0 is the request code, it should be unique id
+        NotificationManager notificationManager = (NotificationManager) MainActivity.this.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        CharSequence name = "RS-Channel";
+        int importance = NotificationManager.IMPORTANCE_HIGH;
+        NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, name, importance);
+        notificationManager.createNotificationChannel(mChannel);
+
+        notificationManager.notify(reqCode, notificationBuilder.build());
     }
 
     public void openAcercaDeActivity() {
         Intent intent = new Intent(this, AcercaDeActivity.class);
         startActivity(intent);
     }
-
+    //Enviamos a las actividades los datos del usuario a monitorizar
     public void openVerPulsacionesActivity() {
         Intent intent = new Intent();
         intent.putExtra("channelID", channelID);
@@ -222,6 +226,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void switchActivado() {
+        PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
+        wakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,
+                "MyApp::MyWakelockTag");
+        wakeLock.acquire();
+
         editor = getSharedPreferences("save", MODE_PRIVATE).edit();
         editor.putBoolean("value", true);
         editor.apply();
@@ -250,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
                 WRITE_API_KEY_Conf = "889R8GB3XCUUCH1Z";
                 channelID_Conf = "1402766";
             }
-
+            //Cliente de recepcion de datos de los sensores
             String clientId = MqttClient.generateClientId();
             client = new MqttAndroidClient(MainActivity.this.getApplicationContext(), "tcp://mqtt.thingspeak.com:1883", clientId);
 
@@ -262,7 +271,7 @@ public class MainActivity extends AppCompatActivity {
             token.setActionCallback(new IMqttActionListener() {
                 @Override
                 public void onSuccess(IMqttToken asyncActionToken) {
-                    // We are connected
+
                     try {
                         client.subscribe("channels/" + channelID + "/subscribe/json/" + READ_API_KEY, 0);
                         client.setCallback(new MqttCallback() {
@@ -274,16 +283,9 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void messageArrived(String topic, MqttMessage message) throws Exception {
                                     textoJSON = new String(message.getPayload());
-                                    //Aqui hacer el parseo
+                                    //Aqui hacemos el parseo
                                     jsonObject = new JSONObject(textoJSON);
                                     pulsaciones = jsonObject.getString("field1");
-
-                                    cor_x = jsonObject.getDouble("field2");
-                                    cor_y = jsonObject.getDouble("field3");
-                                    cor_z = jsonObject.getDouble("field4");
-
-                                    latitud = jsonObject.getDouble("field5");
-                                    longitud = jsonObject.getDouble("field6");
 
                                     caida = jsonObject.getString("field7");
 
@@ -293,12 +295,13 @@ public class MainActivity extends AppCompatActivity {
                                         hayCaida = false;
                                     }
 
+                                    //Creamos las notificaciones de las alarmas
                                     if (Integer.valueOf(pulsaciones) >= 100) {
-                                        showNotification(MainActivity.this, "ALARMA", "Pulsaciones igual o superior a 100 LPM", new Intent(), 0);
+                                        showNotification("ALARMA", "Pulsaciones igual o superior a 100 LPM",  0);
                                     }
 
                                     if (hayCaida) {
-                                        showNotification(MainActivity.this, "ALARMA", "Caída detectada", new Intent(), 1);
+                                        showNotification( "ALARMA", "Caída detectada", 1);
                                     }
 
 
@@ -310,19 +313,18 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
 
+                        //Cliente del envio de la señal de monitorizacion
                         String clientId_Conf = MqttClient.generateClientId();
                         clientConf = new MqttAndroidClient(MainActivity.this.getApplicationContext(), "tcp://mqtt.thingspeak.com:1883", clientId_Conf);
                         IMqttToken tokenConf = clientConf.connect();
                         tokenConf.setActionCallback(new IMqttActionListener() {
                             @Override
                             public void onSuccess(IMqttToken asyncActionToken) {
-                                // We are connected
                                 handlerPublish.postDelayed(runnablePublish, 0);
                             }
 
                             @Override
                             public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                                // Something went wrong e.g. connection timeout or firewall problems
                                 Toast.makeText(MainActivity.this, "Error de conexion a TS", Toast.LENGTH_SHORT).show();
                             }
                         });
@@ -335,7 +337,6 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-                    // Something went wrong e.g. connection timeout or firewall problems
                     Toast.makeText(MainActivity.this, "Error de conexion a TS", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -348,7 +349,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void openConfigThingSpeak() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Datos del canal a leer");
+        builder.setTitle("Datos de los canales");
 
         LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
@@ -371,12 +372,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         final EditText channelID_Conf_Box = new EditText(this);
-        channelID_Conf_Box.setHint("Channel ID Confirmación");
+        channelID_Conf_Box.setHint("Channel ID Monitorización");
         layout.addView(channelID_Conf_Box);
 
 
         final EditText WRITE_API_KEY_Conf_Box = new EditText(this);
-        WRITE_API_KEY_Conf_Box.setHint("WRITE_API_KEY Confirmación");
+        WRITE_API_KEY_Conf_Box.setHint("WRITE_API_KEY Monitorización");
         layout.addView(WRITE_API_KEY_Conf_Box);
 
         builder.setView(layout);

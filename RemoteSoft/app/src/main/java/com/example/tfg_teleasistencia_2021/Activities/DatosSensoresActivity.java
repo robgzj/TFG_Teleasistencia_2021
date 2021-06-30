@@ -23,34 +23,39 @@ import androidx.core.app.ActivityCompat;
 
 import com.example.tfg_teleasistencia_2021.Pulsera;
 import com.example.tfg_teleasistencia_2021.R;
-import com.example.tfg_teleasistencia_2021.Window;
+import com.example.tfg_teleasistencia_2021.DetectaCaida;
 import com.zhaoxiaodan.miband.MiBand;
 import com.zhaoxiaodan.miband.listeners.HeartRateNotifyListener;
 
 public class DatosSensoresActivity extends AppCompatActivity {
 
+    //Atributos utilizados en la vista
     private Button btn_atras;
     private TextView txtUbi, txtAcelerometro, txtPulsaciones;
-    private Sensor acelerometro;
+    private TextView conectado_a;
+    private TextView hayCaida;
+
+    //Atributos para calcular la ubicacion
     private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
     private LocationManager mLocationManager;
-    private SensorManager mSensorManager;
-    private TextView conectado_a;
-    private Pulsera pulsera;
 
+    //Atributos de la pulsera
     private BluetoothDevice device;
     private MiBand miBand;
+    private Pulsera pulsera;
 
-    private TextView hayCaida;
+    //Atributos del acelerometro
+    private Sensor acelerometro;
+    private SensorManager mSensorManager;
+
+    //Atributos para el detector de caidas
     private double ac;
-    private Window ventana;
+    private DetectaCaida ventana;
 
     private LocationListener mLocationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
             txtUbi.setText(String.format("Latitud: %s\nLongitud: %s", location.getLatitude(), location.getLongitude()));
-
-
         }
     };
 
@@ -105,12 +110,13 @@ public class DatosSensoresActivity extends AppCompatActivity {
         miBand = new MiBand(this);
         pulsera = new Pulsera(miBand, device);
 
+        //Conservamos la conexion si hay dispositivo vinculado
         if (device != null) {
             pulsera.conectar_dispositivo(this);
             conectado_a.setText("Conectado a: " + device.getName());
             pulsera.calcular_pulsaciones(this, mHealthListener);
         }
-        ventana = new Window(10);
+        ventana = new DetectaCaida(10);
         getAccelerometerValues();
 
         //Si no ha pedido permisos de ubicación los pide, si ya los ha pedido, no hace falta

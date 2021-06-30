@@ -27,7 +27,7 @@ public class VinculacionPulseraActivity extends AppCompatActivity {
     private Button btn_atras;
     private ListView listaDispositivos;
     private Switch switch_scan;
-    private MiBand miband;
+
     private ScanCallback scanCallback;
 
     private HashMap<String, BluetoothDevice> devices = new HashMap<>();
@@ -43,8 +43,6 @@ public class VinculacionPulseraActivity extends AppCompatActivity {
 
         switch_scan = findViewById(R.id.switch_scan);
         listaDispositivos = findViewById(R.id.lista_dispositivos);
-
-        miband = new MiBand(this);
 
         final ArrayAdapter adapter = new ArrayAdapter<String>(this, R.layout.item, new ArrayList<>());
 
@@ -68,6 +66,7 @@ public class VinculacionPulseraActivity extends AppCompatActivity {
                 if (isChecked) {
                     MiBand.startScan(scanCallback);
                 } else {
+                    //Dejamos de buscar y borramos la lista de dispositivos
                     MiBand.stopScan(scanCallback);
                     adapter.clear();
                     devices.clear();
@@ -85,6 +84,8 @@ public class VinculacionPulseraActivity extends AppCompatActivity {
                     MiBand.stopScan(scanCallback);
 
                     BluetoothDevice device = devices.get(item);
+
+                    //Cogemos el dispositivo que se ha seleccionado y lo enviamos a la vista principal
                     Intent intent = new Intent();
                     intent.putExtra("device", device);
                     intent.setClass(VinculacionPulseraActivity.this, MainActivity.class);

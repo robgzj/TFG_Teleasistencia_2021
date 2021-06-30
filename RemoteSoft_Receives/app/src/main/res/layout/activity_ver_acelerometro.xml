@@ -31,7 +31,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Coordenada X" />
+                    android:text="@string/c_x" />
 
                 <TextView
                     android:id="@+id/datos_cor_x"
@@ -51,7 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Coordenada Y" />
+                    android:text="@string/c_y" />
 
                 <TextView
                     android:id="@+id/datos_cor_y"
@@ -71,7 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Coordenada Z" />
+                    android:text="@string/c_z" />
 
                 <TextView
                     android:id="@+id/datos_cor_z"
@@ -91,7 +91,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="¿Caída?" />
+                    android:text="@string/hay_caida" />
 
                 <TextView
                     android:id="@+id/datos_caida"
@@ -110,7 +110,7 @@
             android:layout_below="@id/logo_app3"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
-            android:text="Valores Acelerometro" />
+            android:text="@string/valores_ac" />
 
         <ImageView
             android:id="@+id/logo_app3"

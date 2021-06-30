@@ -17,7 +17,7 @@
             android:layout_below="@id/logo_app3"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="25dp"
-            android:text="Valor Pulsaciones" />
+            android:text="@string/valor_puls" />
 
         <TableLayout
             android:id="@+id/tableLayout"
@@ -40,7 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="Pulsaciones" />
+                    android:text="@string/pulsaciones" />
 
                 <TextView
                     android:id="@+id/datos_pulsaciones"

@@ -38,5 +38,5 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/boton_atras"
         android:layout_centerHorizontal="true"
-        android:text="No está vinculado a ninguna pulsera" />
+        android:text="@string/no_vinculado" />
 </RelativeLayout>
